@@ -1,10 +1,14 @@
+node_modules
 /public/bitrix/web.config
 /public/bitrix/.settings.php
 /public/bitrix/urlrewrite.php
 /public/bitrix/virtual_file_system.php
 /public/bitrix/coupon_activation.php
 /public/bitrix/license_key.php
+/public/bitrix/header.php
+/public/bitrix/footer.php
 /public/bitrix/spread.php
+/public/bitrix/index.php
 /public/bitrix/rss.php
 /public/bitrix/p3p.xml
 /public/bitrix/modules
@@ -41,3 +45,6 @@
 **/.access.php
 **/.DS_Store
 **/*.log
+**/*.ppt
+**/*.doc
+**/*.pdf
