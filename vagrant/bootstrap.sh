@@ -87,6 +87,11 @@ php-cs-fixer selfupdate
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /etc/nginx/sites-available/default
 sudo ln -s /vagrant/vagrant/configs/nginx/nenaprasno.ru.conf /etc/nginx/sites-enabled/nenaprasno.ru.conf
+sudo ln -s /vagrant/vagrant/configs/nginx/media.nenaprasno.ru.conf /etc/nginx/sites-enabled/media.nenaprasno.ru.conf
+
+# bitrix symlinks
+ln -s /vagrant/nenaprasno.ru/public/bitrix/ /vagrant/media.nenaprasno.ru/public/bitrix
+ln -s /vagrant/nenaprasno.ru/public/upload/ /vagrant/media.nenaprasno.ru/public/upload
 
 # Add some php.ini tweak.
 sudo ln -s /vagrant/vagrant/configs/php.ini /etc/php/7.0/fpm/conf.d/00-php.ini
