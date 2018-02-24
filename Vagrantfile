@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.hostname = "nenaprasno.local"
 
-  config.hostsupdater.aliases = ["mediadev-nenaprasno.local", "media-nenaprasno.local", "hso-nenaprasno.local"]
+  config.hostsupdater.aliases = ["mediadev.nenaprasno.local", "media.nenaprasno.local", "hso.nenaprasno.local"]
 
   unless Vagrant.has_plugin?("vagrant-hostsupdater")
     puts 'vagrant-hostsupdater is not installed!'
