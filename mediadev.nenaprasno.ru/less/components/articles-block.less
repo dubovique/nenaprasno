@@ -1,0 +1,162 @@
+.articles-block {
+  [class^="col-"] {
+    display: flex;
+  }
+}
+
+.articles-block-title {
+  font-size: 20px;
+}
+
+.articles-block-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @media (min-width: 48em) {
+    max-height: 200px;
+    background-color: #cecece;
+    background-repeat: no-repeat;
+  }
+}
+
+.articles-block-item-link {
+  display: block;
+  color: @c-text;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @c-text;
+  }
+
+  @media (min-width: 48em) {
+    max-height: 200px;
+  }
+}
+
+.articles-block-item-bg {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 48em) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.articles-block-item-overlay {
+  position: relative;
+  z-index: 10;
+  padding-top: 4px;
+
+  @media (min-width: 48em) {
+    padding: 35px;
+  }
+}
+
+.articles-block-item-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+  @media (min-width: 48em) {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+.articles-block-item-subtitle {
+  font-size: 14px;
+
+  @media (min-width: 48em) {
+    font-size: 17px;
+  }
+}
+
+.articles-block-item-featured {
+  .articles-block-item-title {
+    font-size: 14px;
+
+    @media (min-width: 48em) {
+      font-size: 32px;
+    }
+  }
+
+  .articles-block-item-subtitle {
+    font-size: 14px;
+
+    @media (min-width: 48em) {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 48em) {
+    min-height: 300px;
+    max-height: 350px;
+  }
+}
+
+.articles-block-item-inverse {
+  @media (min-width: 48em) {
+    max-height: 200px;
+    color: #fff;
+  }
+
+
+  .articles-block-item-link {
+    @media (min-width: 48em) {
+      color: #fff;
+    }
+  }
+}
+
+.articles-block-loadmore {
+  text-align: center;
+
+  a {
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 50px;
+    border: 3px solid @c-orange;
+    color: @c-text;
+
+    &:hover,
+    &:focus {
+      background-color: @c-orange;
+      color: #fff;
+    }
+  }
+}
+
+.directory-link {
+  display: block;
+  width: 100%;
+  background-color: @c-orange;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  padding: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: lighten(@c-orange, 5%);
+  }
+
+  @media (min-width: 48em) {
+    font-size: 24px;
+    padding: 30px;
+  }
+}
