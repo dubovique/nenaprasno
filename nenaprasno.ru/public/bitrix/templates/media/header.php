@@ -36,7 +36,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
         <div class="main-header-right">
             <form action="" class="main-header-search">
-                <a href="/search/" class="main-header-search-toggle">
+                <a href="/search/" class="main-header-search-toggle js-search">
                     <img src="/assets/images/icon-search.svg">
                 </a>
             </form>
@@ -69,6 +69,16 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Зарегистрироваться</a>
 		</div>
 	</nav>
+</div>
+
+<div id="search-overlay" class="main-search-overlay">
+    <nav class="main-search-wrapper">
+        <?$APPLICATION->IncludeComponent("bitrix:search.form","media-overlay-search",Array(
+                "USE_SUGGEST" => "N",
+                "PAGE" => "/search/index.php"
+            )
+        );?>
+    </nav>
 </div>
 
 <main class="main-content m-t-lg m-b-lg">
