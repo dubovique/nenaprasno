@@ -17,16 +17,14 @@
 				$active_link = 'active';
 			}
 			?>
-				<div class="cancer-catalog-block-category <?=$active_link?>">
-					<a href="<?=$aricle['FIELDS']['DETAIL_PAGE_URL'];?>" >
-						<div class="cancer-catalog-block-category-title">
-							<?=$aricle['FIELDS']['NAME'];?>
-						</div>
-						<div class="cancer-catalog-block-category-desc">
-							<?=$aricle['PROPERTIES']['SUBTITLE']['VALUE'];?>
-						</div>
-					</a>
-				</div>
+				<a href="<?=$aricle['FIELDS']['DETAIL_PAGE_URL'];?>" class="cancer-catalog-block-category <?=$active_link?>">
+                    <div class="cancer-catalog-block-category-title">
+                        <?=$aricle['FIELDS']['NAME'];?>
+                    </div>
+                    <div class="cancer-catalog-block-category-desc">
+                        <?=$aricle['PROPERTIES']['SUBTITLE']['VALUE'];?>
+                    </div>
+				</a>
 		<?endforeach;?>
 	</div>
 <?endif;?>

@@ -101,6 +101,13 @@
   padding: 15px;
   margin: 7px;
   min-height: 100px;
+  color: @c-text;
+
+  &:hover,
+  &.active {
+    border-color: @c-orange;
+    color: @c-text;
+  }
 
   @media (max-width: 767px) {
     flex-basis: calc(~"50% - 14px");

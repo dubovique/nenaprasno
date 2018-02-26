@@ -1,26 +1,6 @@
 /* cancer-catalog */
-.cancer-catalog-block-category {
-	padding: 0;
-}
-
 .article-block h2 {
 	color: #fb4e42;
-}
-
-.cancer-catalog-block-category a {
-	padding: 15px;
-	display: block;
-	height: 100%;
-	text-decoration: none;
-	color: #1D1D1B;
-}
-
-.cancer-catalog-block-category:hover {
-	border-color: #FB4E42;
-}
-
-.cancer-catalog-block-categories .active {
-	border-color: #FB4E42;
 }
 
 a {
@@ -124,7 +104,7 @@ a {
 	color: #FB4E42;
 }
 
-.back-link a{
+.back-link a {
 	margin: 20px 0 20px 0;
 	display: inline-block;
 	color: #1D1D1B;

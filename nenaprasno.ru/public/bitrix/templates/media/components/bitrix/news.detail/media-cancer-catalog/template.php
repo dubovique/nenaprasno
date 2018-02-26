@@ -10,16 +10,14 @@
 <?if(isset($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'])):?>
 	<div class="cancer-catalog-block-categories">
 		<?foreach($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'] as $aricle_id):?>
-				<div class="cancer-catalog-block-category">
-					<a href="<?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['FIELDS']['DETAIL_PAGE_URL'];?>" >
-						<div class="cancer-catalog-block-category-title">
-							<?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['FIELDS']['NAME'];?>
-						</div>
-						<div class="cancer-catalog-block-category-desc">
-							<?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['PROPERTIES']['SUBTITLE']['VALUE'];?>
-						</div>
-					</a>
-				</div>
+            <a href="<?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['FIELDS']['DETAIL_PAGE_URL'];?>" class="cancer-catalog-block-category">
+                <div class="cancer-catalog-block-category-title">
+                    <?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['FIELDS']['NAME'];?>
+                </div>
+                <div class="cancer-catalog-block-category-desc">
+                    <?=$arResult['ADDITIONAL_ARTICLES'][$aricle_id]['PROPERTIES']['SUBTITLE']['VALUE'];?>
+                </div>
+            </a>
 		<?endforeach;?>
 	</div>
 <?endif;?>
