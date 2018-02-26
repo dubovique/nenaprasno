@@ -119,7 +119,7 @@
         <? if (($arResult['PROPERTIES']['PARTNERS']['VALUE'])): ?>
             <div class="partners-block m-b-md">
                 <div class="partners-block-title">
-                    Генеральные партнеры
+                    Доноры
                 </div>
                 <?
                     global $projectPartnersFilter;
@@ -156,7 +156,7 @@
         <? if (($arResult['PROPERTIES']['SPONSORS']['VALUE'])): ?>
             <div class="partners-block m-b-md">
                 <div class="partners-block-title">
-                    Спонсоры
+                    Инфраструктурные партнеры
                 </div>
                 <?
                     global $projectSponsorsFilter;
