@@ -29,9 +29,9 @@ gulp.task('less', function() {
 
 var jsFiles = [
         './node_modules/jquery/dist/jquery.js',
-        './node_modules/inputmask//dist/jquery.inputmask.bundle.js',
-        './js/sites/profilaktika-media/components/**/*.js',
-        './js/sites/profilaktika-media/scripts.js'
+        './node_modules/inputmask/dist/jquery.inputmask.bundle.js',
+        './js/components/**/*.js',
+        './js/scripts.js'
     ],
     jsDest = './public/assets/build';
 

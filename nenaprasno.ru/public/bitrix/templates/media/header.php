@@ -34,17 +34,19 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		<?$APPLICATION->IncludeComponent("bitrix:menu", "main-header-menu", Array("ROOT_MENU_TYPE" => "top", "USE_EXT" => "Y"), false);?>
 
-        <form action="" class="main-header-search">
-            <a href="/search/" class="main-header-search-toggle">
-				<img src="/assets/images/icon-search.svg">
-            </a>
-        </form>
+        <div class="main-header-right">
+            <form action="" class="main-header-search">
+                <a href="/search/" class="main-header-search-toggle">
+                    <img src="/assets/images/icon-search.svg">
+                </a>
+            </form>
 
-        <div class="main-header-userarea">
-            <div class="main-header-userarea-links">
-                <a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
-                <br>
-                <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+            <div class="main-header-userarea">
+                <div class="main-header-userarea-links">
+                    <a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
+                    <br>
+                    <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+                </div>
             </div>
         </div>
 

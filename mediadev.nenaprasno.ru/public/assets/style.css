@@ -1,13 +1,13 @@
 /* cancer-catalog */
-.cancer-catalog-block-category{
+.cancer-catalog-block-category {
 	padding: 0;
 }
 
-.article-block h2{
+.article-block h2 {
 	color: #fb4e42;
 }
 
-.cancer-catalog-block-category a{
+.cancer-catalog-block-category a {
 	padding: 15px;
 	display: block;
 	height: 100%;
@@ -15,43 +15,12 @@
 	color: #1D1D1B;
 }
 
-.cancer-catalog-block-category:hover{
+.cancer-catalog-block-category:hover {
 	border-color: #FB4E42;
 }
 
-.cancer-catalog-block-categories .active{
+.cancer-catalog-block-categories .active {
 	border-color: #FB4E42;
-}
-
-/* pagination */
-.pagination {
-    font-size: 0;
-    margin-left: -5px;
-    margin-right: -5px;
-}
-
-.pagination-item-next, .pagination-item-prev {
-    padding: 0 13px;
-    color: #1D1D1B;
-}
-
-.pagination-item {
-    display: inline-block;
-    min-width: 36px;
-    height: 36px;
-    font-size: 18px;
-    line-height: 30px;
-    text-align: center;
-    color: #1D1D1B;
-    transition: all .2s;
-    background-color: #fff;
-    border: 3px solid #FB4E42;
-    margin: 0 5px 8px;
-}
-
-.pagination-item:hover{
-    color: #fff;
-    background-color: #FB4E42;
 }
 
 a {
@@ -59,36 +28,30 @@ a {
     color: #1D1D1B;
 }
 
-.pagination-item.active {
-    color: #fff;
-    background-color: #FB4E42;
-    border-color: #FB4E42;
-}
-
-.disabled{
+.disabled {
 	background-color: #fff;
 }
 
-.disabled:hover{
+.disabled:hover {
 	color: #1D1D1B;
 	background-color: #fff;
 }
 
 /* articles-block */
-.articles-block-item{
+.articles-block-item {
 	min-height: 200px;
 }
 
-.articles-block-item{
+.articles-block-item {
 	min-height: 230px;
 }
 
-.articles-block-item-inverse{
+.articles-block-item-inverse {
 	min-height: 230px;
 }
 
 @media (min-width: 48em) {
-	.articles-block-item-inverse{
+	.articles-block-item-inverse {
 		min-height: 440px;
 	}
 	.articles-block-item-featured .articles-block-item-title {
@@ -168,14 +131,9 @@ a {
 	text-decoration: underline;
 }
 
-.search-subtitle{
+.search-subtitle {
     margin: 20px 0 20px 0;
     font-weight: bold;
-}
-
-/*bottom menu*/
-li.active a {
-	color: #FB4E42;
 }
 
 /* articles html */
@@ -183,13 +141,4 @@ li.active a {
     margin: 10px 0 20px 0;
     color: #999;
     font-size: 13px;
-}
-
-/* cancer-catalog link on main */
-.directory-link {
-	color: #000;
-}
-.directory-link:hover {
-	background-color: #cd514f;
-	color: #000;
 }

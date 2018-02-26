@@ -114,6 +114,10 @@ source ~/.bashrc
 # Create default MySQL user & database.
 mysql -u root -p$MYSQL_ROOT_PWD < ./vagrant/startup/init-mysql.sql
 
+## Node JS install
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 ## Finish
 # Cleanup unused packages.
 sudo apt-get autoremove -y
