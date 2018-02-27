@@ -7,6 +7,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500">
+		<?$APPLICATION->ShowHead();?>
     <title><?$APPLICATION->ShowTitle();?></title>
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/build/style.min.css">
@@ -17,6 +18,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<meta property="og:image:url" content="<?$APPLICATION->ShowProperty("image");?>">
 </head>
 <body class="header-fixed">
+
+	<? if ($USER->IsAdmin()): ?>
+		<? $APPLICATION->ShowPanel(); ?>
+	<? endif ?>
 
 <header class="main-header">
     <div class="wrapper">
@@ -41,11 +46,26 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </a>
             </form>
 
+            <? $user = getAppercodeUser(); ?>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
-                    <a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
-                    <br>
-                    <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+									<? if (is_null($user)): ?>
+										<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
+										<br>
+										<a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+									<? else: ?>
+											<a href="http://nenaprasno-cabinet.webglyphs.ru">
+													<span style="margin-right: 20px">
+															<? if (isset($user->userName)): ?>
+																	<?=$user->userName?>
+															<? else: ?>
+																	Личный кабинет
+															<? endif ?>
+													</span>
+											</a>
+											<br>
+											<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+									<? endif ?>
                 </div>
             </div>
         </div>
