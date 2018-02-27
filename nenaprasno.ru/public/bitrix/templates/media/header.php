@@ -46,7 +46,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </a>
             </form>
 
-            <? $user = getAppercodeUser();>
+            <? $user = getAppercodeUser();?>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
 									<? if (is_null($user)): ?>
@@ -98,7 +98,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 									<? endif ?>
 							</span>
 					</a>
-					 &nbsp;|&nbsp; 
+					 &nbsp;|&nbsp;
 					<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
 			<? endif ?>
 		</div>
