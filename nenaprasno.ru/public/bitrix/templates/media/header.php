@@ -46,7 +46,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </a>
             </form>
 
-            <? $user = getAppercodeUser(); ?>
+            <? $user = getAppercodeUser();>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
 									<? if (is_null($user)): ?>
@@ -86,7 +86,21 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<nav class="main-offcanvas">
 		<?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top", "USE_EXT" => "Y"), false);?>
 		<div class="main-offcanvas-padding">
-			<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Зарегистрироваться</a>
+			<? if (is_null($user)): ?>
+				<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Зарегистрироваться</a>
+			<? else: ?>
+					<a href="http://nenaprasno-cabinet.webglyphs.ru">
+							<span style="margin-right: 20px">
+									<? if (isset($user->userName)): ?>
+											<?=$user->userName?>
+									<? else: ?>
+											Личный кабинет
+									<? endif ?>
+							</span>
+					</a>
+					 &nbsp;|&nbsp; 
+					<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+			<? endif ?>
 		</div>
 	</nav>
 </div>
