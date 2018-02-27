@@ -1,6 +1,6 @@
 <article class="article-block article-block-wrapper">
 	<h1 class="article-block-title"><?=$arResult['NAME'];?></h1>
-	<h2><?=$arResult['PROPERTIES']['SUBTITLE']['VALUE'];?></h2>
+	<h2 class="c-orange"><?=$arResult['PROPERTIES']['SUBTITLE']['VALUE'];?></h2>
 	<p><?=$arResult['~PREVIEW_TEXT'];?></p>
 </article>
 

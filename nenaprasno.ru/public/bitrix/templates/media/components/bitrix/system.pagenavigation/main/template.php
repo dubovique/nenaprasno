@@ -24,7 +24,7 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 			Пред.
 		</a>
 	<?else:?>
-		<a disabled class="pagination-item pagination-item-prev disabled">
+		<a disabled class="pagination-item pagination-item-prev pagination-item-disabled">
 			<?php include $_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-pagination-prev.svg"; ?>
 			Пред.
 		</a>
@@ -47,7 +47,7 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 			<?php include $_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-pagination-next.svg"; ?>
 		</a>
 	<?else:?>
-		<a disabled class="pagination-item pagination-item-next disabled">
+		<a disabled class="pagination-item pagination-item-next pagination-item-disabled">
 			След.
 			<?php include $_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-pagination-next.svg"; ?>
 		</a>

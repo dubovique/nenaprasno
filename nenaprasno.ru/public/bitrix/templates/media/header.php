@@ -11,7 +11,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <title><?$APPLICATION->ShowTitle();?></title>
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/build/style.min.css">
-    <link rel="stylesheet" href="/assets/style.css">
 	<meta property="og:title" content="<?$APPLICATION->ShowTitle();?>" />
 	<meta property="og:description" content="<?$APPLICATION->ShowProperty("description");?>">
 	<meta property="og:image" content="<?$APPLICATION->ShowProperty("image");?>">

@@ -13,9 +13,9 @@
 						</div>
 						<div class="articles-block-item-overlay">
 							<?
-							$color = 'black';
+							$color = 'c-black';
 							if($item['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-								$color = 'white';
+								$color = 'c-white';
 							}
 							?>
 							<div class="articles-block-item-title <?=$color;?>">
