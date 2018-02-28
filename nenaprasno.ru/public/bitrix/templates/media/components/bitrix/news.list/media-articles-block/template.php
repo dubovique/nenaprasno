@@ -11,9 +11,9 @@ $this->setFrameMode(true);
 					</div>
 					<div class="articles-block-item-overlay">
 						<?
-						$color1 = 'c-black';
+						$color1 = 'title-c-black';
 						if($on_main_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-							$color1 = 'c-white';
+							$color1 = 'title-c-white';
 						}
 						?>
 						<div class="articles-block-item-title <?=$color1;?>">
@@ -43,9 +43,9 @@ $this->setFrameMode(true);
                         </div>
                         <div class="articles-block-item-overlay">
 							<?
-							$color2 = 'c-black';
+							$color2 = 'title-c-black';
 							if($item['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-								$color2 = 'c-white';
+								$color2 = 'title-c-white';
 							}
 							?>
                             <div class="articles-block-item-title <?=$color2;?>">

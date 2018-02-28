@@ -142,9 +142,9 @@
 							</div>
 							<div class="articles-block-item-overlay">
 								<?
-								$color1 = 'black';
+								$color1 = 'title-c-black';
 								if($section_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-									$color1 = 'white';
+									$color1 = 'title-c-white';
 								}
 								?>
 								<div class="articles-block-item-title <?=$color1;?>">
@@ -213,9 +213,9 @@
 								</div>
 								<div class="articles-block-item-overlay">
 									<?
-									$color2 = 'black';
+									$color2 = 'title-c-black';
 									if($new_element['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-										$color2 = 'white';
+										$color2 = 'title-c-white';
 									}
 									?>
 									<div class="articles-block-item-title <?=$color2;?>">
