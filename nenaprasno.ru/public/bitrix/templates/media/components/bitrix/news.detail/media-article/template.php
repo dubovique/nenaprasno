@@ -21,14 +21,22 @@
 			<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"];?>" class="article-block-preview-image" alt="">
 
 			<div class="article-block-preview-text">
-				<h1 class="article-block-preview-title">
+				<?
+				$color = 'c-black';
+				$views_color = 'black-views';
+				if($arResult['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
+					$color = 'c-white';
+					$views_color = '';
+				}
+				?>
+				<h1 class="article-block-preview-title <?=$color;?>">
 					<?=$arResult['NAME'];?>
 				</h1>
-				<div class="article-block-preview-desc">
+				<div class="article-block-preview-desc <?=$color;?>">
 					<?=$arResult["~PREVIEW_TEXT"];?>
 				</div>
 				<?if($arResult['FIELDS']['SHOW_COUNTER']>0):?>
-					<div class="article-block-preview-views">
+					<div class="article-block-preview-views <?=$views_color;?>">
 						<?=$arResult['FIELDS']['SHOW_COUNTER'];?>
 					</div>
 				<?endif;?>

@@ -212,10 +212,22 @@
     position: relative;
     top: 2px;
     display: inline-block;
-    background: url("../../assets/images/icon-article-views-white.svg") no-repeat center;
+    background-color: @c-white;
+    -webkit-mask: url("../../assets/images/icon-article-views-white.svg") no-repeat center;
+    mask: url("../../assets/images/icon-article-views-white.svg") no-repeat center;
+    -webkit-mask-size: cover;
+    mask-size: cover;
     width: 26px;
-    height: 18px;
+    height: 16px;
     margin-right: 5px;
+  }
+}
+
+.black-views{
+  color: @c-black;
+
+  &::before {
+    background-color: @c-black;
   }
 }
 
