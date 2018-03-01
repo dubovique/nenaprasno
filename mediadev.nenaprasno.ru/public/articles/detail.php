@@ -38,6 +38,8 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 			  "DISPLAY_BOTTOM_PAGER" => "N",
 			  "SET_STATUS_404" => "Y",
 			  "SHOW_404" => "Y",
+			  "SAME_SEC_CNT" => 3,// сколько выводить связанных по теме материалов
+			  "NEW_CNT" => 3,// сколько выводить новых материалов
 		  ),
 	  false
 	  );

@@ -132,7 +132,7 @@
 			<div class="row">
 			<?$i = 0;?>
 			<? foreach ($arSectionElements as $key => $section_element): ?>
-				<?if($i>5) break;?>
+				<?if($i>$arResult["SAME_SEC_CNT"]-1) break;?>
 				<div class="col-xs-6 col-md-4">
 				<?$img = CFile::GetFileArray($section_element["FIELDS"]["PREVIEW_PICTURE"]);?>
 					<article class="articles-block-item">
@@ -164,7 +164,7 @@
 				<?$i++;?>
 			<? endforeach ?>
 			</div>
-			<?if($same_sec_cnt>6):?>
+			<?if($same_sec_cnt>$arResult["SAME_SEC_CNT"]):?>
 				<?
 					$res = CIBlockSection::GetByID($arResult["IBLOCK_SECTION_ID"]);
 					if($arRes = $res->Fetch()){
@@ -203,7 +203,7 @@
 				$i = 0;
 				?>
 				<? foreach ($arNewElements as $key => $new_element): ?>
-					<?if($i>5) break;?>
+					<?if($i>$arResult["NEW_CNT"]-1) break;?>
 					<div class="col-xs-6 col-md-4">
 					<?$img = CFile::GetFileArray($new_element["FIELDS"]["PREVIEW_PICTURE"]);?>
 						<article class="articles-block-item">
@@ -236,7 +236,7 @@
 				<? endforeach ?>
 				</div>
 
-			<? if ($new_cnt>6): ?>
+			<? if ($new_cnt>$arResult["NEW_CNT"]): ?>
 				<div class="articles-block-loadmore">
 					<a href="/articles/">Ещё</a>
 				</div>
