@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 <div class="wrapper">
 	<?
 	global $articleFilter;//не выводить закрепленный элемент
-	$articleFilter = ['!PROPERTY_ON_MAIN_VALUE' => 'Y'];
+	$articleFilter = array("!PROPERTY_DONT_SHOW_ON_MAIN_VALUE" => "Y", "!PROPERTY_ON_MAIN_VALUE" => "Y");
 	?>
 
 	<?$APPLICATION->IncludeComponent(
