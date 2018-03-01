@@ -21,21 +21,3 @@
 		<?endforeach;?>
 	</div>
 <?endif;?>
-
-<div class="article-block-navigator article-block-navigator-with-border m-t-lg m-b-lg">
-    <a href="#" class="article-block-navigator-prev">
-        Предыдущая статья
-
-        <span class="article-block-navigator-title">
-            Диагностика
-        </span>
-    </a>
-    <hr>
-    <a href="#" class="article-block-navigator-next">
-        Следующая статья
-
-        <span class="article-block-navigator-title">
-            Факторы риска
-        </span>
-    </a>
-</div>

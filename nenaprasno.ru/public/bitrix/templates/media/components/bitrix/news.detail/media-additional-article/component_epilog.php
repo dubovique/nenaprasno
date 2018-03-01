@@ -22,8 +22,8 @@
   if ($description) {
     $APPLICATION->SetPageProperty('d', $description['VALUE']);
   } else {
-    $APPLICATION->SetPageProperty('d', $arResult['IPROPERTY_VALUES']['ELEMENT_META_DESCRIPTION']);  
+    $APPLICATION->SetPageProperty('d', $arResult['IPROPERTY_VALUES']['ELEMENT_META_DESCRIPTION']);
   }
-  
+
   $APPLICATION->SetPageProperty('url', 'http://nenaprasno.webglyphs.ru/projects/' . $element['CODE'] . '/');
 ?>
