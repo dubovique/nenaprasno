@@ -5,29 +5,31 @@
   margin-left: 0;
   margin-right: 0;
 }
+
 .article-block-highlight {
     color: #FB4E42;
     font-weight: 700;
     font-size: 20px;
     line-height: 28px;
 }
+
 .pic-caption {
     margin: 10px 0 20px 0;
     color: #999;
     font-size: 13px;
 }
 
-ul {
+.article-block-wrapper ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-ul li {
+.article-block-wrapperul li {
   padding-left: 1em;
 }
 
-ul li::before {
+.article-block-wrapper ul li::before {
   content: "• ";
   color: #FB4E42;
   font-size: 30px;
