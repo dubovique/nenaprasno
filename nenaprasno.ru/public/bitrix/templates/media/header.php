@@ -7,7 +7,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500">
-		<?$APPLICATION->ShowHead();?>
+	<?$APPLICATION->ShowHead();?>
     <title><?$APPLICATION->ShowTitle();?></title>
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/build/style.min.css">
@@ -18,9 +18,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 </head>
 <body class="header-fixed">
 
-	<? if ($USER->IsAdmin()): ?>
-		<? $APPLICATION->ShowPanel(); ?>
-	<? endif ?>
+<? if ($USER->IsAdmin()): ?>
+	<? $APPLICATION->ShowPanel(); ?>
+<? endif ?>
 
 <header class="main-header">
     <div class="wrapper">
@@ -41,40 +41,40 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <div class="main-header-right">
             <form action="" class="main-header-search">
                 <a href="/search/" class="main-header-search-toggle js-search">
-                    <img src="/assets/images/icon-search.svg">
+					<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-search.svg"); ?>
                 </a>
             </form>
 
             <? $user = getAppercodeUser();?>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
-									<? if (is_null($user)): ?>
-										<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
-										<br>
-										<a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
-									<? else: ?>
-											<a href="http://nenaprasno-cabinet.webglyphs.ru">
-													<span style="margin-right: 20px">
-															<? if (isset($user->userName)): ?>
-																	<?=$user->userName?>
-															<? else: ?>
-																	Личный кабинет
-															<? endif ?>
-													</span>
-											</a>
-											<br>
-											<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
-									<? endif ?>
+					<? if (is_null($user)): ?>
+						<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
+						<br>
+						<a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+					<? else: ?>
+						<a href="http://nenaprasno-cabinet.webglyphs.ru">
+							<span style="margin-right: 20px">
+								<? if (isset($user->userName)): ?>
+									<?=$user->userName?>
+								<? else: ?>
+									Личный кабинет
+								<? endif ?>
+							</span>
+						</a>
+						<br>
+						<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+					<? endif ?>
                 </div>
             </div>
         </div>
 
         <div class="main-header-right-mobile">
             <a href="/search/" class="main-header-search-toggle">
-				<img src="/assets/images/icon-search.svg">
+				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-search.svg"); ?>
             </a>
             <a href="#" class="main-header-user-toggle">
-				<img src="/assets/images/icon-lock.svg">
+				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-lock.svg"); ?>
             </a>
         </div>
 
@@ -89,13 +89,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Зарегистрироваться</a>
 			<? else: ?>
 					<a href="http://nenaprasno-cabinet.webglyphs.ru">
-							<span style="margin-right: 20px">
-									<? if (isset($user->userName)): ?>
-											<?=$user->userName?>
-									<? else: ?>
-											Личный кабинет
-									<? endif ?>
-							</span>
+						<span style="margin-right: 20px">
+							<? if (isset($user->userName)): ?>
+								<?=$user->userName?>
+							<? else: ?>
+								Личный кабинет
+							<? endif ?>
+						</span>
 					</a>
 					 &nbsp;|&nbsp;
 					<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
