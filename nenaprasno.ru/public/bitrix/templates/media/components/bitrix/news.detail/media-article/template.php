@@ -1,5 +1,4 @@
 <article class="article-block article-block-wrapper">
-	<?print_r($arResult['PROPERTIES']['TYPE']['VALUE']);?>
 	<?if($arResult['PROPERTIES']['TYPE']['VALUE'] == 'Тип 2'):?>
 		<!-- второй вариант детальной страницы-->
 		<h1 class="article-block-title">
@@ -7,8 +6,6 @@
 		</h1>
 
 		<div class="article-block-short-desc">
-			<?=$arResult['PROPERTIES']['SUBTITLE']['VALUE'];?>
-			<br>
 			<?=$arResult["~PREVIEW_TEXT"];?>
 		</div>
 
@@ -28,8 +25,6 @@
 					<?=$arResult['NAME'];?>
 				</h1>
 				<div class="article-block-preview-desc">
-					<?=$arResult['PROPERTIES']['SUBTITLE']['VALUE'];?>
-					<br>
 					<?=$arResult["~PREVIEW_TEXT"];?>
 				</div>
 				<?if($arResult['FIELDS']['SHOW_COUNTER']>0):?>
