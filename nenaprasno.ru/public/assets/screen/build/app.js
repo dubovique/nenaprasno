@@ -60,7 +60,7 @@
 	
 	// Store
 	var formStore = __webpack_require__(151),
-	    Cookies = __webpack_require__(153);
+	    Cookies = __webpack_require__(154);
 	
 	var app = new Vue({
 	    el: "#app",
@@ -15187,7 +15187,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-app.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-app.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-app.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -15719,7 +15719,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-breadcrumbs.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-breadcrumbs.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-breadcrumbs.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -15886,7 +15886,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-part.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-part.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-part.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16011,11 +16011,16 @@
 	            }
 	        },
 	        submitForm: function submitForm() {
+	            var _this2 = this;
+	
 	            if (pageValidation(this.part, this.$store)) {
 	                var _this = this;
 	
 	                formSubmit(_this).then(function (response) {
 	                    alert(config.messages.successFormPost);
+	
+	                    // Scrolling to top of next page
+	                    _this2.$root.$el.scrollIntoView(true);
 	
 	                    if (!_this.$store.state.user || _this.$store.state.user.isAnonymous) {
 	                        _this.$store.commit('setSubmitAuthModal', true);
@@ -16466,7 +16471,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-section.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-section.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-section.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16577,7 +16582,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-group.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-group.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-group.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16688,7 +16693,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-control.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-control.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-control.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17002,7 +17007,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-radioButtons.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-radioButtons.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-radioButtons.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17169,7 +17174,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-textBlock.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-textBlock.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-textBlock.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17296,7 +17301,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-textBox.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-textBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-textBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17446,7 +17451,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-numberInput.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-numberInput.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-numberInput.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17594,7 +17599,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-dateTimePicker.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-dateTimePicker.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-dateTimePicker.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17734,7 +17739,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-checkBox.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-checkBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-checkBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17900,7 +17905,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-checkBoxList.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-checkBoxList.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-checkBoxList.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -18088,7 +18093,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-comboBox.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/controls/form-comboBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-comboBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -18726,7 +18731,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-result.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-result.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-result.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -19021,7 +19026,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-submit-auth-modal.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-submit-auth-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-submit-auth-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -19590,7 +19595,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/social-auth.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/social-auth.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] social-auth.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20034,7 +20039,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-auth-modal.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-auth-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-auth-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20351,7 +20356,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-profile-modal.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-profile-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-profile-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20987,7 +20992,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-success-modal.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-success-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-success-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -21145,7 +21150,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-userarea.vue"
+	Component.options.__file = "/vagrant/nenaprasno.ru/public/assets/screen/app/components/form-userarea.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-userarea.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -21350,7 +21355,7 @@
 	var objectAPI = __webpack_require__(152);
 	
 	// Helpers
-	var fillUserFields = __webpack_require__(154);
+	var fillUserFields = __webpack_require__(153);
 	
 	module.exports = new Vuex.Store({
 	    state: {
@@ -21674,6 +21679,57 @@
 
 /***/ }),
 /* 153 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	function fillUserFields(control, store) {
+	    var sexFieldName = "t1-p1-s1-g1-c1";
+	    var regionFieldName = "reg1";
+	    var ageFieldName = "t1-p3-s2-g1-c1";
+	
+	    if (control.controlId === sexFieldName) {
+	        store.commit('setControlValue', {
+	            id: control.controlId,
+	            value: store.state.userProfile.data.sex
+	        });
+	
+	        console.log("Sex set as: " + control.value);
+	    }
+	    if (control.controlId === regionFieldName) {
+	        if (store.state.userProfile.data.regionId) {
+	            var foundRegion = store.state.regions.find(function (region) {
+	                return region.id === store.state.userProfile.data.regionId;
+	            });
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: foundRegion ? foundRegion.value : null
+	            });
+	
+	            console.log("Region set as: " + foundRegion.title + " " + foundRegion.value);
+	        }
+	    }
+	
+	    if (control.controlId === ageFieldName) {
+	        var bdate = store.state.userProfile.data.birthdate;
+	        if (bdate) {
+	            var ageDifMs = Date.now() - new Date(bdate).getTime();
+	            var ageDate = new Date(ageDifMs); // miliseconds from epoch;
+	            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: age
+	            });
+	
+	            console.log("Age set as: " + age);
+	        }
+	    }
+	}
+	
+	module.exports = fillUserFields;
+
+/***/ }),
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21842,57 +21898,6 @@
 	
 		return init(function () {});
 	});
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	function fillUserFields(control, store) {
-	    var sexFieldName = "t1-p1-s1-g1-c1";
-	    var regionFieldName = "reg1";
-	    var ageFieldName = "t1-p3-s2-g1-c1";
-	
-	    if (control.controlId === sexFieldName) {
-	        store.commit('setControlValue', {
-	            id: control.controlId,
-	            value: store.state.userProfile.data.sex
-	        });
-	
-	        console.log("Sex set as: " + control.value);
-	    }
-	    if (control.controlId === regionFieldName) {
-	        if (store.state.userProfile.data.regionId) {
-	            var foundRegion = store.state.regions.find(function (region) {
-	                return region.id === store.state.userProfile.data.regionId;
-	            });
-	            store.commit('setControlValue', {
-	                id: control.controlId,
-	                value: foundRegion ? foundRegion.value : null
-	            });
-	
-	            console.log("Region set as: " + foundRegion.title + " " + foundRegion.value);
-	        }
-	    }
-	
-	    if (control.controlId === ageFieldName) {
-	        var bdate = store.state.userProfile.data.birthdate;
-	        if (bdate) {
-	            var ageDifMs = Date.now() - new Date(bdate).getTime();
-	            var ageDate = new Date(ageDifMs); // miliseconds from epoch;
-	            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-	            store.commit('setControlValue', {
-	                id: control.controlId,
-	                value: age
-	            });
-	
-	            console.log("Age set as: " + age);
-	        }
-	    }
-	}
-	
-	module.exports = fillUserFields;
 
 /***/ })
 /******/ ]);

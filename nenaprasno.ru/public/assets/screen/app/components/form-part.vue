@@ -64,6 +64,9 @@
                         .then(response => {
                             alert(config.messages.successFormPost);
 
+                            // Scrolling to top of next page
+                            this.$root.$el.scrollIntoView(true);
+
                             if (!_this.$store.state.user || _this.$store.state.user.isAnonymous) {
                                 _this.$store.commit('setSubmitAuthModal', true);
                             }
