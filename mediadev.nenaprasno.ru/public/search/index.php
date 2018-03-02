@@ -12,36 +12,49 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 				"USE_SUGGEST" => "N",
 				"PAGE" => "/search/index.php"
 			)
-		);?> 
+		);?>
 
 		<?if(!empty($_REQUEST['search'])):?>
 				<div class="search-subtitle">Результаты поиска «<?=$_REQUEST['search']?>»:</div>
 		<?
 			CModule::IncludeModule('search');
 
-			$filter = array(
-				'MODULE_ID' => 'iblock',
-				'PARAM1' => 'media',
-			);
+			$sFilter = array(
+	            array(
+	                "MODULE_ID" => "iblock",
+	                "PARAM1" => "media",
+	            ),
+	            array(
+	                "MODULE_ID" => "iblock",
+	                "PARAM2" => 23,
+	            ),
+        	);
 
-			$obTitle = new CSearchTitle;
-
-			$obTitle->Search(
-				$_REQUEST['search'],
-				20,
-				$filter,
-				false,
-				['ID' => 'ASC']
-			);
-
+			$module_id = "iblock";
+			$obSearch = new CSearch;
+			$obSearch->Search(array(
+			    "QUERY" => $_REQUEST['search'],
+			    "MODULE_ID" => $module_id,
+				$sFilter
+				//"PARAM1" => "media",
+			));
 			$i = 0;
-			while($arResult = $obTitle->GetNext()){?>
-				<a href="<?=$arResult['URL'];?>" style="margin-bottom: 10px; display: inline-block;"><?=$arResult['~TITLE'];?></a>
-				<br>
-			<?
-			$i++;
-			}
-			
+			if ($obSearch->errorno!=0):
+			    ?>
+			    <font class="text">В поисковой фразе обнаружена ошибка:</font>
+			    <?echo ShowError($obSearch->error);?>
+			    <font class="text">Исправьте поисковую фразу и повторите поиск.</font>
+			    <?
+			else:
+			    while($arResult = $obSearch->GetNext())
+			    {?>
+			        <a href="<?echo $arResult["URL"]?>"><?echo $arResult["TITLE_FORMATED"]?></a>
+			        <?echo $arResult["BODY_FORMATED"]?>
+			    <hr size="1" color="#DFDFDF">
+			    <?
+				$i++;
+				}
+			endif;
 			if ($i==0)
 				echo "Поиск не дал результатов, попробуйте изменить поисковую фразу";
 		endif;

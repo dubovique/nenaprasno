@@ -19,16 +19,17 @@
 		<!-- первый вариант детальной страницы-->
 		<div class="article-block-preview m-b-lg">
 			<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"];?>" class="article-block-preview-image" alt="">
-
-			<div class="article-block-preview-text">
-				<?
-				$color = 'c-black';
-				$views_color = 'black-views';
-				if($arResult['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
-					$color = 'c-white';
-					$views_color = '';
-				}
-				?>
+			<?
+			$color = 'c-black';
+			$background = 'article-block-preview-background';	
+			$views_color = 'black-views';
+			if($arResult['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
+				$color = 'c-white';
+				$views_color = '';
+				$background = '';
+			}
+			?>
+			<div class="article-block-preview-text <?=$background;?>">
 				<h1 class="article-block-preview-title <?=$color;?>">
 					<?=$arResult['NAME'];?>
 				</h1>
