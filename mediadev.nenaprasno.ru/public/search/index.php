@@ -1,6 +1,21 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Profilaktika.Media");
+
+$results = [];
+if (isset($_GET['search']) && $_GET['search']) {
+	CModule::IncludeModule('search');
+
+	$obSearch = new CSearch;
+	$obSearch->Search(array(
+	    "QUERY" => $_GET['search'],
+		"PARAM1" => 'media',
+		"PARAM2" => 23
+	));
+	while ($element = $obSearch->GetNext()){
+		$results[] = $element;
+	}
+}
 ?>
 
 <div class="wrapper">
@@ -14,51 +29,15 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 			)
 		);?>
 
-		<?if(!empty($_REQUEST['search'])):?>
-				<div class="search-subtitle">Результаты поиска «<?=$_REQUEST['search']?>»:</div>
-		<?
-			CModule::IncludeModule('search');
-
-			$sFilter = array(
-	            array(
-	                "MODULE_ID" => "iblock",
-	                "PARAM1" => "media",
-	            ),
-	            array(
-	                "MODULE_ID" => "iblock",
-	                "PARAM2" => 23,
-	            ),
-        	);
-
-			$module_id = "iblock";
-			$obSearch = new CSearch;
-			$obSearch->Search(array(
-			    "QUERY" => $_REQUEST['search'],
-			    "MODULE_ID" => $module_id,
-				$sFilter
-				//"PARAM1" => "media",
-			));
-			$i = 0;
-			if ($obSearch->errorno!=0):
-			    ?>
-			    <font class="text">В поисковой фразе обнаружена ошибка:</font>
-			    <?echo ShowError($obSearch->error);?>
-			    <font class="text">Исправьте поисковую фразу и повторите поиск.</font>
-			    <?
-			else:
-			    while($arResult = $obSearch->GetNext())
-			    {?>
-			        <a href="<?echo $arResult["URL"]?>"><?echo $arResult["TITLE_FORMATED"]?></a>
-			        <?echo $arResult["BODY_FORMATED"]?>
-			    <hr size="1" color="#DFDFDF">
-			    <?
-				$i++;
-				}
-			endif;
-			if ($i==0)
-				echo "Поиск не дал результатов, попробуйте изменить поисковую фразу";
-		endif;
-		?>
+		<? if($results): ?>
+			<div class="search-subtitle">Результаты поиска «<?=htmlspecialchars($_GET['search'])?>»:</div>
+			<? foreach ($results as $result): ?>
+				<a href="<?=$result["URL"]?>"><?=$result["TITLE_FORMATED"]?></a>
+				<hr size="1" color="#DFDFDF">
+			<? endforeach ?>
+		<? else: ?>
+			<div class="search-subtitle">По вашему запросу ниччего не найдено</div>
+		<? endif ?>
 	</div>
 	<div class="back-link">
 		<a href="<?=$_SERVER['HTTP_REFERER'];?>">Вернуться назад</a>
