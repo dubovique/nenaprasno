@@ -36,7 +36,7 @@ if (isset($_GET['search']) && $_GET['search']) {
 				<hr size="1" color="#DFDFDF">
 			<? endforeach ?>
 		<? else: ?>
-			<div class="search-subtitle">По вашему запросу ниччего не найдено</div>
+			<div class="search-subtitle">По вашему запросу ничего не найдено</div>
 		<? endif ?>
 	</div>
 	<div class="back-link">

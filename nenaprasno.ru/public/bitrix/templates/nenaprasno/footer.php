@@ -45,7 +45,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form-1.css">
     <? else: ?>
         <script async src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
-        <script async src="/assets/js/payments.js?p=<?=time()?>"></script>
     <? endif ?>
 
     <!-- Yandex.Metrika counter -->

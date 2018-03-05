@@ -34,7 +34,7 @@ $(function(){
 	};
 
 	var payment = function(data, form){
-		
+
 
 		if ($('[name=other-sum]').val()){
 			data['sum'] = $('[name=other-sum]').val();
@@ -69,14 +69,14 @@ $(function(){
 
 	};
 
-/* old "back-button" function 
+/* old "back-button" function
 $('.donate-block-form-tabs a').on('click', function(){
 	$('#donate-block-internet-once-payment').hide();
 	var tab = $(this).attr('href');
 	if(tab == '#donate-block-internet'){
 		$('#donate-block-internet').show();
 	}
-	
+
 	return false;
 });
 */
@@ -85,6 +85,7 @@ $('.donate-block-form-tabs a').on('click', function(){
 $("a[href^='#donate-block-internet']").on('click', function(){
 	$('#donate-block-internet-once-payment').hide();
 	$('#donate-block-internet-monthly-payment').hide();
+	$('#donate-block-sberbank').hide();
 	$('#donate-block-internet').show();
 	return false;
 });
@@ -92,6 +93,7 @@ $("a[href^='#donate-block-internet']").on('click', function(){
 $("a[href^='#donate-block-sberbank']").on('click', function(){
 	$('#donate-block-internet-once-payment').hide();
 	$('#donate-block-internet-monthly-payment').hide();
+	$('#donate-block-internet').hide();
 	$('#donate-block-sberbank').show();
 	return false;
 });

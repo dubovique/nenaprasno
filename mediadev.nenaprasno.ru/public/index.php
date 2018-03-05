@@ -40,6 +40,13 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 	    )
 	);?>
     <a href="/cancer-catalog/" class="directory-link m-t-lg">Справочник видов рака</a>
+	<?
+	$APPLICATION->IncludeFile(
+	SITE_DIR."include/donations/donate-block.php",
+	Array(),
+	Array("MODE"=>"html", "SHOW_BORDER" => false)
+	);
+	?>
 </div>
 
 <?
