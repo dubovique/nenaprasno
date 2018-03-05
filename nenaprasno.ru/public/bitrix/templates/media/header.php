@@ -49,11 +49,11 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
 					<? if (is_null($user)): ?>
-						<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
+						<a href="http://cabinet.nenaprasno.ru/login">Вход</a>
 						<br>
-						<a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
+						<a href="http://cabinet.nenaprasno.ru/registration">Регистрация</a>
 					<? else: ?>
-						<a href="http://nenaprasno-cabinet.webglyphs.ru">
+						<a href="http://cabinet.nenaprasno.ru">
 							<span style="margin-right: 20px">
 								<? if (isset($user->userName)): ?>
 									<?=$user->userName?>
@@ -63,7 +63,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							</span>
 						</a>
 						<br>
-						<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+						<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
 					<? endif ?>
                 </div>
             </div>
@@ -86,9 +86,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top", "USE_EXT" => "Y"), false);?>
 		<div class="main-offcanvas-padding">
 			<? if (is_null($user)): ?>
-				<a href="http://nenaprasno-cabinet.webglyphs.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Зарегистрироваться</a>
+				<a href="http://cabinet.nenaprasno.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://cabinet.nenaprasno.ru/registration">Зарегистрироваться</a>
 			<? else: ?>
-					<a href="http://nenaprasno-cabinet.webglyphs.ru">
+					<a href="http://cabinet.nenaprasno.ru">
 						<span style="margin-right: 20px">
 							<? if (isset($user->userName)): ?>
 								<?=$user->userName?>
@@ -98,7 +98,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						</span>
 					</a>
 					 &nbsp;|&nbsp;
-					<a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+					<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
 			<? endif ?>
 		</div>
 	</nav>

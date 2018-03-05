@@ -3,10 +3,6 @@
 	<p><?=$arResult['~DETAIL_TEXT'];?></p>
 </article>
 
-<div class="back-link">
-	<a href="/cancer-catalog/">К справочнику</a>
-</div>
-
 <?if(isset($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'])):?>
 	<div class="cancer-catalog-block-categories">
 		<?foreach($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'] as $aricle_id):?>
@@ -21,3 +17,7 @@
 		<?endforeach;?>
 	</div>
 <?endif;?>
+
+<div class="back-link">
+	<a href="/cancer-catalog/">К справочнику</a>
+</div>

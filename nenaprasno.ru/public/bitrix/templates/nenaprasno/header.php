@@ -52,7 +52,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         <img height="60px" src="/assets/images/logo.svg" alt="Фонд профилактики рака. Живу не напрасно.">
                     </a>
                 <? endif ?>
-            </div>   
+            </div>
             <div class="main-header-right">
 				<div class="main-header-contacts phone-col">
 					<? $APPLICATION->IncludeFile('/include/phone.php'); ?>
@@ -89,10 +89,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
                 <div class="main-header-button-login">
                     <? if (is_null($user)): ?>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/registration">Регистрация</a>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/login">Вход</a>
+                        <a href="http://cabinet.nenaprasno.ru/registration">Регистрация</a>
+                        <a href="http://cabinet.nenaprasno.ru/login">Вход</a>
                     <? else: ?>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru">
+                        <a href="http://cabinet.nenaprasno.ru">
                             <span style="margin-right: 20px">
                                 <? if (isset($user->userName)): ?>
                                     <?=$user->userName?>
@@ -101,7 +101,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                                 <? endif ?>
                             </span>
                         </a>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/logout">Выход</a>
+                        <a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
                     <? endif ?>
                 </div>
             </div>
@@ -129,17 +129,17 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="main-offcanvas-user">
                 <div class="main-offcanvas-padding">
                     <? if (is_null($user)): ?>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/login" class="main-offcanvas-user-login">
+                        <a href="http://cabinet.nenaprasno.ru/login" class="main-offcanvas-user-login">
                             Войти на сайт
                         </a>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/registration" class="main-offcanvas-user-link">
+                        <a href="http://cabinet.nenaprasno.ru/registration" class="main-offcanvas-user-link">
                             Зарегистрироваться
                         </a>
                     <? else: ?>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru" class="main-offcanvas-user-link">
+                        <a href="http://cabinet.nenaprasno.ru" class="main-offcanvas-user-link">
                             Личный кабинет
                         </a>
-                        <a href="http://nenaprasno-cabinet.webglyphs.ru/logout" class="main-offcanvas-user-link">
+                        <a href="http://cabinet.nenaprasno.ru/logout" class="main-offcanvas-user-link">
                             Выход
                         </a>
                     <? endif ?>
