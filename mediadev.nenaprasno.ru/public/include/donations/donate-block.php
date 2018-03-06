@@ -1,8 +1,7 @@
-<!--<link rel="stylesheet" href="/assets/donate-form.css">-->
-<section id="donate" class="donate-block p-t-xl p-b-xl"><!--b-grey-->
+<section id="donate" class="donate-block p-t-xl p-b-xl">
     <div class="wrapper">
         <div class="block-title">
-            <span>Помочь прямо сейчас</span>
+            <span>Помогите проекту прямо сейчас</span>
         </div>
 
         <div class="donate-block-row">
@@ -101,36 +100,9 @@
                                 <div class="col-xs-12 col-sm-6 m-b-md">
                                     <label class="donate-block-form-label">Поддержать проект</label>
                                     <div class="donate-block-form-select">
-                                        <?
-                                          global $projectsFilter;
-                                          $projectsFilter = ['PROPERTY_CANDONATE_VALUE' => 'Y'];
-                                          $APPLICATION->IncludeComponent("bitrix:news.list", "media-projects-select", array(
-                                              "FILTER_NAME" => "projectsFilter",
-                                              "IBLOCK_ID" => "7",
-                                              "NEWS_COUNT" => "30",
-                                              "SORT_BY1" => "SORT",
-                                              "SORT_ORDER1" => "ASC",
-                                              "FIELD_CODE" => array(),
-                                              "PROPERTY_CODE" => array(),
-                                              "SET_TITLE" => "N",
-                                              "SET_STATUS_404" => "N",
-                                              "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                                              "ADD_SECTIONS_CHAIN" => "N",
-                                              "PARENT_SECTION" => "",
-                                              "PARENT_SECTION_CODE" => "",
-                                              "DISPLAY_TOP_PAGER" => "N",
-                                              "DISPLAY_BOTTOM_PAGER" => "N",
-                                              "PAGER_SHOW_ALWAYS" => "N",
-                                              "PAGER_TEMPLATE" => "main",
-                                              "CACHE_TYPE" => "A",
-                                              "CACHE_TIME" => "360000",
-                                              "CACHE_FILTER" => "N",
-                                              "CACHE_GROUPS" => "N",
-                                              "OPENED" => $_REQUEST['code']
-                                            ),
-                                            false
-                                          );
-                                        ?>
+										<select name="donate-project" disabled>
+											<option value="<?=ED_ACTIVITIES;?>">Просветительская деятельность</option>
+										</select>
                                     </div>
                                 </div>
                             </div>
