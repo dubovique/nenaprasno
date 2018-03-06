@@ -20,13 +20,12 @@
 }
 
 .article-block-wrapper ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 17px;
 }
 
-.article-block-wrapperul li {
-  padding-left: 1em;
+.article-block-wrapper ul li {
+  list-style: none;
+  text-indent: -1em;
 }
 
 .article-block-wrapper ul li::before {
