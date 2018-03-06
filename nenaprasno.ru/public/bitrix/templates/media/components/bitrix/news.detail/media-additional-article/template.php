@@ -4,6 +4,15 @@
 	<p><?=$arResult['~PREVIEW_TEXT'];?></p>
 </article>
 
+<div class="article-block-share cancer-catalog-share">
+	<div class="article-block-share-title">
+		Поделиться с друзьями
+	</div>
+	<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+	<script src="//yastatic.net/share2/share.js"></script>
+	<div class="ya-share2" data-services="facebook,vkontakte,odnoklassniki,gplus,twitter" data-counter=""></div>
+</div>
+
 <div class="back-link">
 	<a href="/cancer-catalog/main-articles/<?=$arResult['SECTION']['PATH'][0]['CODE'];?>/">Вернуться к основной статье</a>
 </div>
