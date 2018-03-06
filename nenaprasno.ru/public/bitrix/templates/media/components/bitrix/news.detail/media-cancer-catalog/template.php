@@ -3,6 +3,15 @@
 	<p><?=$arResult['~DETAIL_TEXT'];?></p>
 </article>
 
+<div class="article-block-share cancer-catalog-share">
+	<div class="article-block-share-title">
+		Поделиться с друзьями
+	</div>
+	<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+	<script src="//yastatic.net/share2/share.js"></script>
+	<div class="ya-share2" data-services="facebook,vkontakte,odnoklassniki,gplus,twitter" data-counter=""></div>
+</div>
+
 <?if(isset($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'])):?>
 	<div class="cancer-catalog-block-categories">
 		<?foreach($arResult['PROPERTIES']['ADDITIONAL_ARTICLES']['VALUE'] as $aricle_id):?>
