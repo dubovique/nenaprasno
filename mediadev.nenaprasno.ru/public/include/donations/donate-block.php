@@ -1,3 +1,4 @@
+<?define('ED_ACTIVITIES', 1160);//ID проекта "Просветительская деятельность"?> 
 <section id="donate" class="donate-block p-t-xl p-b-xl">
     <div class="wrapper">
         <div class="block-title">
