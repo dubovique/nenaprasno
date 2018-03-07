@@ -1,3 +1,4 @@
+<?define('ED_ACTIVITIES', 1160);//ID проекта "Просветительская деятельность"?>
 <link rel="stylesheet" href="/assets/css/donate-form.css">
 <section id="donate" class="donate-block p-t-xl p-b-xl b-gray">
     <div class="wrapper">
@@ -188,9 +189,9 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
 					<div id="donate-block-internet-once-payment" class="donate-block-form-tab active" style="display: none;">
 						<div class="donate-block-form-padding" >
 							<div class="internet-payment-text">Перевсети N руб. на пожертвование</div>
@@ -226,7 +227,7 @@
 						</div>
 					</div>
 
-                    
+
                     <div id="donate-block-sberbank" class="donate-block-form-tab">
                         <div class="donate-block-form-padding">
                             <div class="donate-block-form-bank">

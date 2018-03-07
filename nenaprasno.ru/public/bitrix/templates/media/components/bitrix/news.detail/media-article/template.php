@@ -21,7 +21,7 @@
 			<img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"];?>" class="article-block-preview-image" alt="">
 			<?
 			$color = 'c-black';
-			$background = 'article-block-preview-background';	
+			$background = 'article-block-preview-background';
 			$views_color = 'black-views';
 			if($arResult['PROPERTIES']['TITLE_COLOR']['VALUE'] == 'белый'){
 				$color = 'c-white';
@@ -98,7 +98,7 @@
 				<?else:?>
 					<input type="hidden" value="<?=$_SESSION['csrf']?>" name="csrf" />
 					<div class="subscribe-block-title">
-						Подписаться на рассылку Profilaktika.Media
+						Подписаться на лучшие материалы месяца
 					</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-8">
