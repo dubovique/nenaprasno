@@ -23861,6 +23861,8 @@ var vueApp = new Vue({
         currentStep: 1,
         showLoginModal: false,
         timer: 0,
+        birthdayMonth: 1,
+        birthdayYear: 1,
         months: [
             "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
         ],
@@ -23876,6 +23878,9 @@ var vueApp = new Vue({
             }
 
             return years;
+        },
+        daysInMonth: function(month,year) {
+            return new Date(this.birthdayYear, this.birthdayMonth, 0).getDate();
         }
     },
     methods: {
@@ -23888,10 +23893,10 @@ var vueApp = new Vue({
                 $(e.target).removeClass('button-blue-hollow').addClass('button-blue');
             }
 
-            //window.onbeforeunload = function(){
-               //return 'Вы действительно хотите покинуть страницу? Все несохраненные данные будут потеряны.';
-            //};
-            
+            window.onbeforeunload = function(){
+                return 'Вы действительно хотите покинуть страницу? Все несохраненные данные будут потеряны.';
+            };
+
             if ( $(_this.$el).find('[data-remaining]').length ) {
                 _this.timer = $(_this.$el).find('[data-remaining]').data('remaining');
 
@@ -23899,7 +23904,6 @@ var vueApp = new Vue({
                     _this.timer > 0 ? _this.timer += - 1 : clearInterval(timeoutInterval);
                 }, 1000);
             }
-            
         },
         downloadAndActivateForm: function (url, block) {
             var _this = this;

@@ -25,9 +25,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <div class="wrapper">
         <div class="header-logo">
         	<? if (! CSite::InDir('/index.php')): ?>
-            <a href="/">Высшая школа онкологии</a>
+            <a href="/"><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
           <? else: ?>
-          	<a>Высшая школа онкологии</a>
+          	<a><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
         	<? endif ?>
         </div>
         <div class="header-right">
