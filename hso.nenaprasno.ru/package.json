@@ -18,5 +18,8 @@
     "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "animate.css": "^3.6.1"
   }
 }
