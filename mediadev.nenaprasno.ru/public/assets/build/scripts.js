@@ -15516,6 +15516,32 @@ $("a[href^='#donate-block-sberbank']").on('click', function(){
 	});
 });
 
+(function( $ ) {
+    $.fn.scrollToTop = function() {
+        var $scrollBtn = $(this);
+
+        $scrollBtn.on('click', function (e) {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+
+        function display() {
+            if ($(window).scrollTop() > 600) {
+                $scrollBtn.addClass('active');
+            } else {
+                $scrollBtn.removeClass('active');
+            }
+        }
+
+        $(window).scroll(function () {
+            display();
+        });
+
+        display();
+    }
+}( jQuery ));
 (function() {
     function hideEvent(e, closestEl, hideFunc) {
         if(!$(e.target).closest(closestEl).length) {
@@ -15586,41 +15612,42 @@ $("a[href^='#donate-block-sberbank']").on('click', function(){
         return this;
     };
 }( jQuery ));
-$('.article-block a').each(function(){
+$('.article-block a').each(function () {
     $(this).attr('target', '_BLANK');
 });
 
-$(document).ready(function(){
-
+$(document).ready(function () {
     $('[data-toggle]').toggler();
+    $('[data-scroll-to-top]').scrollToTop();
 
-	$(document).on('click', '.articles-block-loadmore', function(){
-	var row_count = $('.row').length;
-	$('.n'+row_count).after('<div class="row n'+(row_count+1)+'"></div>');
+    $(document).on('click', '.articles-block-loadmore', function () {
+        var row_count = $('.row').length;
+        $('.n' + row_count).after('<div class="row n' + (row_count + 1) + '"></div>');
 
-	    var targetContainer = $('.n'+(row_count+1)),          //  Контейнер, в котором хранятся элементы
-	        url =  $('.articles-block-loadmore').attr('data-url');    //  URL, из которого будем брать элементы
+        // Контейнер, в котором хранятся элементы
+        var targetContainer = $('.n' + (row_count + 1)),
+            // URL, из которого будем брать элементы
+            url = $('.articles-block-loadmore').attr('data-url');
 
-	    if (url !== undefined) {
-	        $.ajax({
-	            type: 'GET',
-	            url: url,
-	            dataType: 'html',
-	            success: function(data){
+        if (url !== undefined) {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                dataType: 'html',
+                success: function (data) {
 
-	                //  Удаляем старую навигацию
-	                $('.articles-block-loadmore').remove();
+                    //  Удаляем старую навигацию
+                    $('.articles-block-loadmore').remove();
 
-	                var elements = $(data).find('.col-xs-6, .col-md-4'),  //  Ищем элементы
-	                    pagination = $(data).find('.articles-block-loadmore');//  Ищем навигацию
+                    var elements = $(data).find('.col-xs-6, .col-md-4'),  // Ищем элементы
+                        pagination = $(data).find('.articles-block-loadmore'); // Ищем навигацию
 
-	                targetContainer.append(elements);   //  Добавляем посты в конец контейнера
-	                targetContainer.after(pagination); //  добавляем навигацию следом
+                    targetContainer.append(elements); // Добавляем посты в конец контейнера
+                    targetContainer.after(pagination); // добавляем навигацию следом
+                }
+            })
+        }
 
-	            }
-	        })
-	    }
-
-	});
+    });
 
 });
