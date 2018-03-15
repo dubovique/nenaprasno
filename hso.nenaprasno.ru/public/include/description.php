@@ -4,5 +4,5 @@
 
 <p style="margin-right: 100px; margin-left: 100px;"><a href="https://vk.com/club142233093" target="_blank">Группа школы Вконтакте</a></p>
 <div class="slider-buttons">
- <a  style="margin-right: 100px; margin-left: 100px;" href="http://hso.nenaprasno.ru/residents" class="button button-blue button-round">портфолио резидентов ВШО</a>
-			</div>
+	<a  style="margin-right: 100px; margin-left: 100px;" href="http://hso.nenaprasno.ru/residents" class="button button-blue button-round">портфолио резидентов ВШО</a>
+</div>

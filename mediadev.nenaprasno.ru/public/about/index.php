@@ -1,17 +1,20 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Profilaktika.Media");
-?>
-
-<div class="wrapper">
-
-<article class="article-block article-block-wrapper">
+?><div class="wrapper">
+ <article class="article-block article-block-wrapper">
 	<h1 class="article-block-title">О проекте</h1>
-	<p>Текст...</p>
-</article>
-
+	<p>
+		 Profilaktika.Media - это просветительский медиапроект Фонда профилактики рака о доказательной медицине и онкологии.
+	</p>
+	<p>
+		 Цель Profilaktika.Media - аккумулировать знания экспертов Фонда на одной площадке и побудить население к ответственному отношению к своему здоровью. Материалы, подготовленные в рамках проекта, будут полезны и специалистам (практикующим врачам, студентам-медикам), и простым людям, которые столкнулись с онкологией и хотят знать о проблеме больше.
+	</p>
+	<p>
+		 Проект реализуется с использованием гранта Президента Российской Федерации на развитие гражданского общества, предоставленного Фондом президентских грантов.
+	</p>
+ </article>
 </div>
-
-<?
+<br><?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
