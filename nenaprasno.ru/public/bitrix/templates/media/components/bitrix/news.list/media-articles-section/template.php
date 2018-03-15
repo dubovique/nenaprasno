@@ -9,7 +9,7 @@
 				<article class="articles-block-item">
 					<a href="<?=$item["DETAIL_PAGE_URL"];?>" class="articles-block-item-link">
 						<div class="articles-block-item-bg">
-							<? $img = CFile::ResizeImageGet($item['PREVIEW_PICTURE'], array('width'=>369, 'height'=>230), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
+							<? $img = CFile::ResizeImageGet($item['PREVIEW_PICTURE'], array('width'=>369 * 2, 'height'=>230 * 2), BX_RESIZE_IMAGE_PROPORTIONAL, true); ?>
 							<img src="<?=$img['src']?>" alt="<?=$item['NAME']?>">
 						</div>
 						<div class="articles-block-item-overlay">
