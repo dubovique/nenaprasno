@@ -44,7 +44,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-search.svg"); ?>
                 </a>
             </form>
-
+            <?if(0)://скрыть вход/регистрацию?>
             <? $user = getAppercodeUser();?>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
@@ -67,15 +67,18 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					<? endif ?>
                 </div>
             </div>
+            <?endif;?>
         </div>
 
         <div class="main-header-right-mobile">
             <a href="/search/" class="main-header-search-toggle">
 				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-search.svg"); ?>
             </a>
-            <a href="#" class="main-header-user-toggle">
-				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-lock.svg"); ?>
-            </a>
+            <?if(0)://скрыть вход/регистрацию?>
+	            <a href="#" class="main-header-user-toggle">
+					<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-lock.svg"); ?>
+	            </a>
+            <?endif;?>
         </div>
 
     </div>
@@ -84,23 +87,25 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <div id="offcanvas" class="main-offcanvas-overlay">
 	<nav class="main-offcanvas">
 		<?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top", "USE_EXT" => "Y"), false);?>
-		<div class="main-offcanvas-padding">
-			<? if (is_null($user)): ?>
-				<a href="http://cabinet.nenaprasno.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://cabinet.nenaprasno.ru/registration">Зарегистрироваться</a>
-			<? else: ?>
-					<a href="http://cabinet.nenaprasno.ru">
-						<span style="margin-right: 20px">
-							<? if (isset($user->userName)): ?>
-								<?=$user->userName?>
-							<? else: ?>
-								Личный кабинет
-							<? endif ?>
-						</span>
-					</a>
-					 &nbsp;|&nbsp;
-					<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
-			<? endif ?>
-		</div>
+		<?if(0)://скрыть вход/регистрацию?>
+			<div class="main-offcanvas-padding">
+				<? if (is_null($user)): ?>
+					<a href="http://cabinet.nenaprasno.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://cabinet.nenaprasno.ru/registration">Зарегистрироваться</a>
+				<? else: ?>
+						<a href="http://cabinet.nenaprasno.ru">
+							<span style="margin-right: 20px">
+								<? if (isset($user->userName)): ?>
+									<?=$user->userName?>
+								<? else: ?>
+									Личный кабинет
+								<? endif ?>
+							</span>
+						</a>
+						 &nbsp;|&nbsp;
+						<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
+				<? endif ?>
+			</div>
+		<?endif;?>
 	</nav>
 </div>
 
