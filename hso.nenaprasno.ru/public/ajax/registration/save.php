@@ -17,10 +17,10 @@ else{
 }
 
 $englishPool = [
-	0 => 'Не владею',
-	1 => 'Начальный',
-	2 => 'Чтение со словарем',
-	3 => 'Свободный'
+	0 => 'Начальный',
+	1 => 'Средний',
+	2 => 'Высокий',
+	3 => 'Продвинутый'
 ];
 
 $rating = floatval($_POST['average-score']);
@@ -47,7 +47,10 @@ switch (intval($_POST['english'])) {
 		break;
 	case 2:
 		$rating += 2;
-	
+		break;
+	case 1:
+		$rating += 1;
+		break;
 	default:
 		break;
 }

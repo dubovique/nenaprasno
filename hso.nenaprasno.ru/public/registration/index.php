@@ -338,10 +338,10 @@ $APPLICATION->SetTitle("Главная");
                     <label for="form-field-english" class="question-form-label">Английский язык</label>
                     <div class="question-form-select">
                         <select name="english" id="form-field-english">
-                            <option value="0">Не владею</option>
-                            <option value="1">Начальный</option>
-                            <option value="2">Чтение со словарем</option>
-                            <option value="3">Свободный</option>
+                            <option value="3">Продвинутый</option>
+                            <option value="2">Высокий</option>
+                            <option value="1">Средний</option>
+                            <option value="0">Начальный</option>
                         </select>
                     </div>
                 </div>
