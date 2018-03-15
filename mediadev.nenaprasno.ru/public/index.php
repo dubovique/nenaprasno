@@ -39,7 +39,7 @@ $APPLICATION->SetTitle("Profilaktika.Media");
 			"FILTER_NAME" => "articleFilter",
 	    )
 	);?>
-    <!--<a href="/cancer-catalog/" class="directory-link m-t-lg">Справочник видов рака</a>-->
+    <!--скрыть справочник <a href="/cancer-catalog/" class="directory-link m-t-lg">Справочник видов рака</a> -->
 </div>
 
 <?
