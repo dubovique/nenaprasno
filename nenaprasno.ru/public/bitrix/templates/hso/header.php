@@ -4,7 +4,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?><!DOCTYPE html>
 <html>
 	<head>
-
 		<?$APPLICATION->ShowHead();?>
 		<title><?$APPLICATION->ShowTitle();?></title>
 		<link rel="stylesheet" href="/assets/style.min.css">
@@ -22,34 +21,34 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<? endif ?>
 
 	<header class="header">
-    <div class="wrapper">
-        <div class="header-logo">
-        	<? if (! CSite::InDir('/index.php')): ?>
-            <a href="/"><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
-          <? else: ?>
-          	<a><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
-        	<? endif ?>
-        </div>
-        <div class="header-right">
-            <div class="header-links">
-				<? if (!$USER->IsAuthorized()): ?>
-    				<a href="/login/">Вход</a>
-                <? else: ?>
-					<a href="/test/">Тестирование</a> /
-                    <a href="/?logout=yes">Выход</a>
+        <div class="wrapper">
+            <div class="header-logo">
+                <? if (! CSite::InDir('/index.php')): ?>
+                <a href="/"><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
+              <? else: ?>
+                <a><img src="/images/scool-landing-logo.svg" alt="Высшая школа онкологии" width="172"></a>
                 <? endif ?>
             </div>
-            <div class="header-socials">
-                <a href="http://vk.com/nenaprasno" target="_blank" title="Вконтакте">
-                    <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-vk.svg"); ?>
-                </a>
-                <a href="https://www.facebook.com/nenaprasno" target="_blank" title="Facebook">
-                    <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-facebook.svg"); ?>
-                </a>
-                <a href="https://twitter.com/ne_naprasno" target="_blank" title="Twitter">
-                    <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-twitter.svg"); ?>
-                </a>
+            <div class="header-right">
+                <div class="header-links">
+                    <? if (!$USER->IsAuthorized()): ?>
+                        <a href="/login/">Вход</a>
+                    <? else: ?>
+                        <a href="/test/">Тестирование</a> /
+                        <a href="/?logout=yes">Выход</a>
+                    <? endif ?>
+                </div>
+                <div class="header-socials">
+                    <a href="http://vk.com/nenaprasno" target="_blank" title="Вконтакте">
+                        <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-vk.svg"); ?>
+                    </a>
+                    <a href="https://www.facebook.com/nenaprasno" target="_blank" title="Facebook">
+                        <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-facebook.svg"); ?>
+                    </a>
+                    <a href="https://twitter.com/ne_naprasno" target="_blank" title="Twitter">
+                        <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-twitter.svg"); ?>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>

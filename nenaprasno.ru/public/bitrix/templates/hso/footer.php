@@ -4,7 +4,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?>
     <footer class="footer">
         <div class="wrapper">
-            &copy; Живу не напрасно, 2017
+            <div class="footer-copyright">
+                &copy; Фонд профилактики рака «Не напрасно», <?php echo date("Y"); ?>
+            </div>
         </div>
     </footer>
     <script src="/assets/scripts.js"></script>
