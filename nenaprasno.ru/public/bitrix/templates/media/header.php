@@ -45,7 +45,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </a>
             </form>
 
-            <? $user = getAppercodeUser();?>
+            <?/* $user = getAppercodeUser();?>
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
 					<? if (is_null($user)): ?>
@@ -67,15 +67,18 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					<? endif ?>
                 </div>
             </div>
+			<?*/?>
         </div>
 
         <div class="main-header-right-mobile">
             <a href="/search/" class="main-header-search-toggle">
 				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-search.svg"); ?>
             </a>
+			<?/*
             <a href="#" class="main-header-user-toggle">
 				<?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-lock.svg"); ?>
             </a>
+			*/?>
         </div>
 
     </div>
@@ -84,6 +87,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <div id="offcanvas" class="main-offcanvas-overlay">
 	<nav class="main-offcanvas">
 		<?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top", "USE_EXT" => "Y"), false);?>
+		<?/*?>
 		<div class="main-offcanvas-padding">
 			<? if (is_null($user)): ?>
 				<a href="http://cabinet.nenaprasno.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://cabinet.nenaprasno.ru/registration">Зарегистрироваться</a>
@@ -101,6 +105,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
 			<? endif ?>
 		</div>
+		<?*/?>
 	</nav>
 </div>
 
