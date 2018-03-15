@@ -42,7 +42,7 @@
 
   <form action="/ajax/test/submit/" method="post" class="question-form-step active" data-vv-scope="form-1">
       <div class="question-form-group">
-          <label for="specialty" class="question-form-label question-form-label-small">
+          <label for="specialty" class="question-form-label question-form-label-small question-form-title-2">
             Кем бы вы хотели стать после окончания ВШО?
             <sup class="question-form-required">*</sup>
           </label>
@@ -114,7 +114,7 @@
       ?>
 
       <div class="question-form-step-buttons">
-          <button type="submit" class="button button-round button-blue">Сохранить решение</button>
+          <button type="submit" class="button button-round button-blue">Отправить решение</button>
       </div>
   </form>
 </div>
