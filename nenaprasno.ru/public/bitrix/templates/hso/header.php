@@ -8,7 +8,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<title><?$APPLICATION->ShowTitle();?></title>
 		<link rel="stylesheet" href="/assets/style.min.css">
 		<link rel="stylesheet" href="/assets/custom.css">
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta property="og:url" content="http://hso.nenaprasno.ru"/>
 		<meta property="og:description" content="Конкурс в высшую школу онкологии - проект Фонда профилактики рака" />
