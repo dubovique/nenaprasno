@@ -99,7 +99,9 @@ $APPLICATION->SetTitle("Главная");
                     <? $APPLICATION->IncludeFile('/include/mainpage/homepage-about-fund-desc.php'); ?>
                 </div>
                 <div class="homepage-about-fund-logo">
-                    <img src="images/nenaprasno-logo.svg" alt="Фонд профилактики рака «Не напрасно»" width="273">
+                    <a target="_blank" href="http://nenaprasno.ru/">
+                        <img src="images/nenaprasno-logo.svg" alt="Фонд профилактики рака «Не напрасно»" width="273">
+                    </a>
                 </div>
             </div>
         </div>
