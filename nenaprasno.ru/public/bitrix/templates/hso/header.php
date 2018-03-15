@@ -9,6 +9,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<link rel="stylesheet" href="/assets/style.min.css">
 		<link rel="stylesheet" href="/assets/custom.css">
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta property="og:url" content="http://hso.nenaprasno.ru"/>
 		<meta property="og:description" content="Конкурс в высшую школу онкологии - проект Фонда профилактики рака" />
 		<meta property="og:title" content="Высшая школа онкологии" />

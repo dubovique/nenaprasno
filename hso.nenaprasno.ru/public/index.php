@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Главная");
                 </div>
 
                 <div class="homepage-welcome-buttons">
-                    <a href="#" class="button button-orange button-round" style="width: 220px;">Принять участие</a>
+                    <a href="#" class="button button-orange button-round">Принять участие</a>
 
                     <span style="color:#666666">Приём заявок заканчивается</span> 14 апреля 2018 года в 23:59
                 </div>
@@ -100,11 +100,11 @@ $APPLICATION->SetTitle("Главная");
     </section>
 
     <section class="homepage-hso-is b-light-orange section-padding-top section-padding-bottom">
-        <div class="homepage-hso-is-title text-center">
-            Высшая школа онкологии &mdash; это:
-        </div>
-
         <div class="wrapper">
+            <div class="homepage-hso-is-title text-center">
+                Высшая школа онкологии&nbsp;&mdash; это:
+            </div>
+
             <div class="row">
                 <div class="col-xs-6 col-sm-3">
                     <div class="homepage-hso-is-item">
@@ -206,8 +206,8 @@ $APPLICATION->SetTitle("Главная");
     </section>
 
     <div class="section-gray section-padding-top section-padding-bottom">
-        <div class="wrapper">
-            <div class="competition-conditions">
+        <div class="competition-conditions">
+            <div class="wrapper">
 
                 <?$APPLICATION->IncludeFile(
                   SITE_DIR."include/tours.php",
@@ -225,35 +225,37 @@ $APPLICATION->SetTitle("Главная");
             Партнеры
         </div>
 
-        <?
-        $APPLICATION->IncludeComponent("bitrix:news.list", "hso-partners", array(
-            "IBLOCK_ID" => "2",
-            "NEWS_COUNT" => "4",
-            "SORT_BY1" => "SORT",
-            "SORT_ORDER1" => "ASC",
-            "FIELD_CODE" => array(),
-            "PROPERTY_CODE" => array("*"),
-            "SET_TITLE" => "N",
-            "SET_STATUS_404" => "N",
-            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-            "ADD_SECTIONS_CHAIN" => "N",
-            "PARENT_SECTION" => "",
-            "PARENT_SECTION_CODE" => "",
-            "DISPLAY_TOP_PAGER" => "N",
-            "DISPLAY_BOTTOM_PAGER" => "N",
-            "PAGER_SHOW_ALWAYS" => "N",
-            "PAGER_TEMPLATE" => "main",
-            "CACHE_TYPE" => "A",
-            "CACHE_TIME" => "3600",
-            "CACHE_FILTER" => "N",
-            "CACHE_GROUPS" => "N",
-        ),
-            false
-        );
-        ?>
+        <div class="wrapper">
+            <?
+            $APPLICATION->IncludeComponent("bitrix:news.list", "hso-partners", array(
+                "IBLOCK_ID" => "2",
+                "NEWS_COUNT" => "4",
+                "SORT_BY1" => "SORT",
+                "SORT_ORDER1" => "ASC",
+                "FIELD_CODE" => array(),
+                "PROPERTY_CODE" => array("*"),
+                "SET_TITLE" => "N",
+                "SET_STATUS_404" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "DISPLAY_TOP_PAGER" => "N",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => "main",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "3600",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "N",
+            ),
+                false
+            );
+            ?>
+        </div>
     </section>
 
-    <section class="homepage-about-fund">
+    <section class="homepage-about-fund section-padding-top section-padding-bottom">
         <div class="wrapper">
             <div class="homepage-about-fund-title">
                 О фонде
