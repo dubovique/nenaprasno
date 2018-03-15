@@ -15,13 +15,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<?$APPLICATION->IncludeComponent("bitrix:menu", "main-footer-menu", Array("ROOT_MENU_TYPE" => "bottom"), false);?>
 
             <div class="main-footer-socials">
-                <a href="#" target="_blank" class="main-footer-socials-item">
+                <a href="https://www.facebook.com/profilaktikamedia/" target="_blank" class="main-footer-socials-item">
                     <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-facebook.svg"); ?>
                 </a>
-                <a href="#" target="_blank" class="main-footer-socials-item">
-                    <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-instagram.svg"); ?>
+                <a href="https://t.me/stupid_cancer" target="_blank" class="main-footer-socials-item">
+                    <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-telegram.svg"); ?>
                 </a>
-                <a href="#" target="_blank" class="main-footer-socials-item">
+                <a href="https://vk.com/profilaktikamedia" target="_blank" class="main-footer-socials-item">
                     <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-vk.svg"); ?>
                 </a>
             </div>
