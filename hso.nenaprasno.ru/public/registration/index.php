@@ -17,7 +17,7 @@ $APPLICATION->SetTitle("Главная");
 
                 <div class="test-welcome-buttons">
                     <a href="http://hso.nenaprasno.ru/" class="button button-round button-gray-hollow">Уйти</a>
-                    <button onclick="yaCounter24911267.reachGoal('agree'); return true;" class="button button-round button-blue-hollow" @click.prevent.once="activateForm">Я согласен</button>
+                    <button onclick="yaCounter24911267.reachGoal('agree'); return true;" class="button button-round button-orange-hollow" @click.prevent.once="activateForm">Я согласен</button>
                 </div>
             </div>
         </div>
@@ -200,7 +200,7 @@ $APPLICATION->SetTitle("Главная");
                 </div>
 
                 <div class="question-form-step-buttons">
-                    <button onclick="yaCounter24911267.reachGoal('shag_2'); return true;" class="button button-round button-blue" @click.prevent="changeStep(2)">Далее к шагу №2</button>
+                    <button onclick="yaCounter24911267.reachGoal('shag_2'); return true;" class="button button-round button-orange" @click.prevent="changeStep(2)">Далее к шагу №2</button>
                 </div>
             </div>
 
@@ -386,7 +386,7 @@ $APPLICATION->SetTitle("Главная");
 
                 <div class="question-form-step-buttons">
                     <button class="button button-round button-gray-hollow" @click.prevent="stepBack">Назад</button>
-                    <button onclick="yaCounter24911267.reachGoal('shag_3'); return true;" class="button button-round button-blue" @click.prevent="changeStep(3)">Далее к шагу №3</button>
+                    <button onclick="yaCounter24911267.reachGoal('shag_3'); return true;" class="button button-round button-orange" @click.prevent="changeStep(3)">Далее к шагу №3</button>
                 </div>
             </div>
 
@@ -456,7 +456,7 @@ $APPLICATION->SetTitle("Главная");
 
                 <div class="question-form-step-buttons">
                     <button class="button button-round button-gray-hollow" @click.prevent="stepBack">Назад</button>
-                    <button type="submit" onclick="yaCounter24911267.reachGoal('send_application'); return true;" onclick="yaCounter24911267.reachGoal('submitreg'); return true;" class="button button-round button-blue">Отправить заявку</button>
+                    <button type="submit" onclick="yaCounter24911267.reachGoal('send_application'); return true;" onclick="yaCounter24911267.reachGoal('submitreg'); return true;" class="button button-round button-orange">Отправить заявку</button>
                 </div>
             </div>
         </form>
