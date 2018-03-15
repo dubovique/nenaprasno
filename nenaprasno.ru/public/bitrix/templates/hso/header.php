@@ -13,7 +13,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<meta property="og:url" content="http://hso.nenaprasno.ru"/>
 		<meta property="og:description" content="Конкурс в высшую школу онкологии - проект Фонда профилактики рака" />
 		<meta property="og:title" content="Высшая школа онкологии" />
-		<meta property="og:image" content="http://hso.nenaprasno.ru/images/slide-1.jpg"/>
+        <meta property="og:image" content="http://hso.nenaprasno.ru/images/bg-about-hso.jpg"/>
+		<meta property="og:image:url" content="http://hso.nenaprasno.ru/images/bg-about-hso.jpg"/>
 	</head>
 	<body>
 
