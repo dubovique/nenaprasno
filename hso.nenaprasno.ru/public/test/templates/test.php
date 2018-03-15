@@ -114,7 +114,7 @@
       ?>
 
       <div class="question-form-step-buttons">
-          <button type="submit" class="button button-round button-blue">Отправить решение</button>
+          <button type="submit" class="button button-round button-orange">Отправить решение</button>
       </div>
   </form>
 </div>

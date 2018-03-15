@@ -126,7 +126,7 @@
   outline: none;
 
   &:focus {
-    border-color: #298DCF;
+    border-color: #a5a5a6;
   }
 
   &.is-error {
@@ -239,7 +239,7 @@
     &:focus {
       & + label {
         &::before {
-          border-color: #00ADF1;
+          border-color: @c-orange;
         }
       }
     }
@@ -276,7 +276,7 @@
         &::after {
           content: '';
           position: absolute;
-          background: #00ADF1;
+          background: @c-orange;
           border-radius: 12px;
           width: 12px;
           height: 12px;
@@ -308,7 +308,7 @@
     &:focus {
       & + label {
         &::before {
-          border-color: #00ADF1;
+          border-color: @c-orange;
         }
       }
     }
@@ -427,6 +427,6 @@
 .question-form-timer-val {
   white-space: nowrap;
   margin-top: 4px;
-  color: #00ADF1;
+  color: @c-orange;
   font-size: 20px;
 }
