@@ -3,6 +3,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
     </main>
+
+    <a href="#" class="scroll-to-top" data-scroll-to-top>Наверх</a>
+
     <footer class="main-footer">
         <div class="wrapper">
             <a href="/" class="main-footer-logo">
