@@ -34,9 +34,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="header-right">
                 <div class="header-links">
                     <? if (!$USER->IsAuthorized()): ?>
+                        <a href="/registration/">Регистрация</a> /
                         <a href="/login/">Вход</a>
                     <? else: ?>
-                        <a href="/test/">Тестирование</a> /
                         <a href="/?logout=yes">Выход</a>
                     <? endif ?>
                 </div>

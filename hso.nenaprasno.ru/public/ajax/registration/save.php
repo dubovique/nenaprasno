@@ -73,11 +73,14 @@ $birthday .= $_POST['birthdate-year'];
 
 
 $rsUsers = CUser::GetList(($by="id"), ($order="desc"), ['LOGIN' => $_POST['email']]);
-if ($u = $rsUsers->Fetch())
+if ($u = $rsUsers->Fetch()) {
 	$user = $u['ID'];
-else{
+	$arUser = new CUser;
+	$arUser->Update($user, ['PASSWORD' => $_POST['password-1']]);
+} else{
 	$arResult = $USER->Register($_POST['email'], $firstname, $lastname, $_POST['password-1'], $_POST['password-2'], $_REQUEST['email']);
-	$user = $USER->GetID(); 
+	$user = $USER->GetID();
+	$USER->Logout();
 }
 
 $el = new CIBlockElement;

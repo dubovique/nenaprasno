@@ -19,7 +19,7 @@ $APPLICATION->SetTitle("Главная");
                 </div>
 
                 <div class="homepage-welcome-buttons">
-                    <a href="#" class="button button-orange button-round" style="width: 220px;">Принять участие</a>
+                    <a href="/registration/" class="button button-orange button-round" style="width: 220px;">Принять участие</a>
                     <? $APPLICATION->IncludeFile('/include/mainpage/homepage-welcome-buttons.php'); ?>
                 </div>
             </div>

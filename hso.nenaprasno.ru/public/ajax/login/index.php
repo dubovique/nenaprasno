@@ -9,6 +9,6 @@ if ($arAuthResult != 1){
 	$_SESSION['message'] = $arAuthResult['MESSAGE'];
 }
 
-LocalRedirect('/test/');
+LocalRedirect('/login/');
 
 ?>
