@@ -25,5 +25,5 @@
     $APPLICATION->SetPageProperty('d', $arResult['IPROPERTY_VALUES']['ELEMENT_META_DESCRIPTION']);
   }
 
-  $APPLICATION->SetPageProperty('url', 'http://nenaprasno.webglyphs.ru/projects/' . $element['CODE'] . '/');
+  $APPLICATION->SetPageProperty('url', 'http://' . $_SERVER['SERVER_NAME'] . $element['CODE'] . '/');
 ?>

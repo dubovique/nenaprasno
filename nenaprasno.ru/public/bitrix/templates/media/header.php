@@ -1,6 +1,10 @@
 <?
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+
+$meta_image = $APPLICATION->GetPageProperty("image");
+if(!$meta_image)
+	$APPLICATION->SetPageProperty('image', '/assets/images/logo.svg');
 ?>
 <!doctype html>
 <html lang="ru">
