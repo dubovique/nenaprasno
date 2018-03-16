@@ -47,9 +47,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     <a href="https://www.facebook.com/nenaprasno" target="_blank" title="Facebook">
                         <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-facebook.svg"); ?>
                     </a>
-                    <a href="https://twitter.com/ne_naprasno" target="_blank" title="Twitter">
-                        <?php include ($_SERVER['DOCUMENT_ROOT'] . "/images/icons/icon-social-twitter.svg"); ?>
-                    </a>
                 </div>
             </div>
         </div>
