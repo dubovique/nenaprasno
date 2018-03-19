@@ -1,6 +1,6 @@
 <?
 	CModule::IncludeModule('iblock');
-	$APPLICATION->SetPageProperty('logo', '/assets/images/profilaktika-media/logo.svg');
+	$APPLICATION->SetPageProperty('logo', '/assets/images/logo.png');
 
 	$element = CIblockElement::GetByID($arResult['ID'])->Fetch();
 	//$APPLICATION->SetPageProperty('name', $element['NAME']);

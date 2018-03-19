@@ -1,5 +1,5 @@
 const config = {
-    cabinetURL: "http://nenaprasno-cabinet.webglyphs.ru",
+    cabinetURL: "http://cabinet.nenaprasno.ru",
     apiUrl: "http://test.appercode.com/v1/notnap",
     messages: {
         confirmLogout: "Вы действительно хотите выйти? Все несохраненные данные будут утеряны.",
