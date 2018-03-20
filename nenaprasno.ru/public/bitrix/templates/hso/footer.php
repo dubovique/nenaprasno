@@ -14,36 +14,21 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <script>vueApp.activateForm();</script>
     <? endif ?>
 
-
-    <script type="text/javascript" >
-    (function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
+    <!-- Yandex.Metrika counter -->
+    <script src="https://mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
+    <script type="text/javascript">
     try {
-    w.yaCounter48129917 = new Ya.Metrika({
-    id:48129917,
-    clickmap:true,
-    trackLinks:true,
-    accurateTrackBounce:true,
-    webvisor:true,
-    trackHash:true
-    });
+        var yaCounter24911267 = new Ya.Metrika({
+            id:24911267,
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
     } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-    s = d.createElement("script"),
-    f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-    d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/48129917" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
+    <noscript><div><img src="https://mc.yandex.ru/watch/24911267" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
