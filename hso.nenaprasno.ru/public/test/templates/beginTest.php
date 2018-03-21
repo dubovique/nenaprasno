@@ -67,11 +67,10 @@
             <p style="font-size: 18px;">Второй тур закрыт, по вопросам обращайтесь в нашу группу <a target="_blank"
                                                                                                     href="https://vk.com/hso2017">https://vk.com/hso2017</a>
             </p>
-            <!--
+
             <div class="test-welcome-button">
-                <a href="/test/?begin8">...</a>
+                <a href="/test/?begin">Начать тест</a>
             </div>
-            -->
         </center>
     </div>
 </div>

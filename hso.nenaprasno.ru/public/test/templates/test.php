@@ -23,7 +23,7 @@
       <div v-if="timer > 0">
           Осталось
           <div class="question-form-timer-val">
-              <span v-if="timer > 60">
+              <span v-if="timer > 40">
                   {{ Math.floor(timer/60) }} мин.
               </span>
               <span v-else>
@@ -41,63 +41,24 @@
   </div>
 
   <form action="/ajax/test/submit/" method="post" class="question-form-step active" data-vv-scope="form-1">
-      <div class="question-form-group">
-          <label for="specialty" class="question-form-label question-form-label-small question-form-title-2">
-            Кем бы вы хотели стать после окончания ВШО?
-            <sup class="question-form-required">*</sup>
-          </label>
-          <div class="question-form-select">
-            <select name="specialty" required>
-              <option value="">Выберите специальность</option>
-
-              <?
-                $APPLICATION->IncludeComponent("bitrix:news.list", "hso-select", array(
-                    "IBLOCK_ID" => "19",
-                    "NEWS_COUNT" => "30",
-                    "SORT_BY1" => "SORT",
-                    "SORT_ORDER1" => "ASC",            
-                    "SORT_BY2" => "ID",
-                    "SORT_ORDER2" => "ASC",
-                    "FIELD_CODE" => array(),
-                    "PROPERTY_CODE" => array(),
-                    "SET_TITLE" => "N",
-                    "SET_STATUS_404" => "N",
-                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                    "ADD_SECTIONS_CHAIN" => "N",
-                    "PARENT_SECTION" => "",
-                    "PARENT_SECTION_CODE" => "",
-                    "DISPLAY_TOP_PAGER" => "N",
-                    "DISPLAY_BOTTOM_PAGER" => "N",
-                    "PAGER_SHOW_ALWAYS" => "N",
-                    "PAGER_TEMPLATE" => "main",
-                    "CACHE_TYPE" => "N",
-                    "CACHE_TIME" => "3600",
-                    "CACHE_FILTER" => "N",
-                    "CACHE_GROUPS" => "N",
-                    "selected" => $testInfo['data']['specialty']
-                  ),
-                  false
-                );
-              ?>
-            </select>     
-          </div>
-      </div>
 
       <?
+        global $filter;
+        $filter = ['ID' => $testInfo['questions']];
         $APPLICATION->IncludeComponent("bitrix:news.list", "hso-test", array(
+            "FILTER_NAME" => "filter",
             "IBLOCK_ID" => "17",
             "NEWS_COUNT" => "30",
             "SORT_BY1" => "SORT",
             "SORT_ORDER1" => "ASC",            
             "SORT_BY2" => "ID",
             "SORT_ORDER2" => "ASC",
-            "FIELD_CODE" => array(),
+            "FIELD_CODE" => array("PREVIEW_TEXT", "DETAIL_TEXT"),
             "PROPERTY_CODE" => array("*"),
             "SET_TITLE" => "N",
             "SET_STATUS_404" => "N",
             "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
             "ADD_SECTIONS_CHAIN" => "N",
-            "PARENT_SECTION" => $testInfo['variant'],
             "PARENT_SECTION_CODE" => "",
             "DISPLAY_TOP_PAGER" => "N",
             "DISPLAY_BOTTOM_PAGER" => "N",

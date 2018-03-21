@@ -5,18 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_befo
 if ($USER->IsAuthorized()){
   $userData = getTestInfo($USER->GetID());
   if ($userData['accepted']){
-    $answers = [];
-    foreach($_REQUEST['tactics'] as $k => $v){
-      $answers[intval($k)]['tactics'] = htmlspecialchars($v); 
-    }
-    foreach($_REQUEST['diagnoses'] as $k => $v){
-      $answers[intval($k)]['diagnoses'] = htmlspecialchars($v); 
-    }
-
-    $answers['specialty'] = htmlspecialchars($_REQUEST['specialty']);
-
-    endTest($userData, $answers);
-
+    endTest($userData, $_REQUEST['answers']);
     LocalRedirect('/test/');
   }
   else{

@@ -1,28 +1,39 @@
 <? if ($arResult['ITEMS']): ?>
-  <? foreach ($arResult['ITEMS'] as $item): ?>
+  <? foreach ($arResult['ITEMS'] as $k => $item): ?>
     <?
-      if ($arParams['answers']){
-        $tactics = $arParams['answers'][$item['ID']]['answers']['tactics']; 
-        $diagnoses = $arParams['answers'][$item['ID']]['answers']['diagnoses']; 
+      if ($arParams['answers'] && isset($arParams['answers'][$item['ID']]['answers'])){
+        $answers = $arParams['answers'][$item['ID']]['answers'];
+      } else {
+        $answers = null;
       }
     ?>
-    <div class="question-form-title-2"><?=$item['NAME']?></div>
+    <div class="question-form-title-2">Вопрос <?=$k + 1?></div>
 
     <div class="question-form-group">
         <div class="question-form-text-description">
             <?=$item['PREVIEW_TEXT']?>
         </div>
-        <label for="task-<?=$item['ID']?>-diag" class="question-form-label question-form-label-small">
-            Диагноз
+        <label class="question-form-label question-form-label-small">
+            Варианты ответа:
         </label>
-        <textarea name="diagnoses[<?=$item['ID']?>]" id="task-<?=$item['ID']?>-diag" class="question-form-textarea" cols="30" rows="10" placeholder="Список диагнозов от наиболее вероятного к наименее вероятному" required><?=$diagnoses?></textarea>
+
+        <? $variants = explode(PHP_EOL, $item['~DETAIL_TEXT']); ?>
+
+        <? foreach ($variants as $j => $variant): ?>
+            <div class="question-form-checkbox question-form-checkbox-variants">
+                <input 
+                    <? if (!is_null($answers) && isset($answers[$j])): ?>
+                        checked
+                    <? endif ?>
+                    name="answers[<?=$item['ID']?>][]" 
+                    id="variant-<?=$item['ID']?>-<?=$j?>" 
+                    type="checkbox" 
+                    value="<?=$j?>" 
+                />
+                <label for="variant-<?=$item['ID']?>-<?=$j?>"><?=$variant?></label>
+            </div>
+        <? endforeach ?>
     </div>
 
-    <div class="question-form-group">
-        <label for="task-<?=$item['ID']?>-tactics" class="question-form-label question-form-label-small">
-            Тактика действий
-        </label>
-        <textarea name="tactics[<?=$item['ID']?>]" id="task-<?=$item['ID']?>-tactics" class="question-form-textarea" cols="30" rows="10" placeholder="Опишите последовательно тактики ваших действий" required><?=$tactics?></textarea>
-    </div>
   <? endforeach ?>
 <? endif ?>

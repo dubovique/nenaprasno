@@ -70,10 +70,18 @@ $APPLICATION->SetTitle("Главная");
 
                 CModule::IncludeModule('iblock');
 
+                $date = "01.01.2018";
+
                 $arOrder = array("SORT" => "ASC");
-                $arFilter = array("IBLOCK_ID" => 3, "PROPERTY_USER" => $id, "PROPERTY_ACCEPTED_VALUE" => 'Y');
-                $arSelectFields = array("ID","ACTIVE", "NAME");
+                $arFilter = array(
+                    "IBLOCK_ID" => 3, 
+                    ">DATE_CREATE" => $date, 
+                    "PROPERTY_USER" => $id, 
+                    "PROPERTY_ACCEPTED_VALUE" => 'Y'
+                );
+                $arSelectFields = array("ID","ACTIVE", "NAME", 'DATE_CREATE');
                 $rsElements = CIBlockElement::GetList($arOrder, $arFilter, FALSE, FALSE, $arSelectFields);
+
                 if($order = $rsElements->Fetch()){
                     $accepted = true;
                 }
@@ -85,9 +93,15 @@ $APPLICATION->SetTitle("Главная");
             <div class="test-welcome">
                 <div class="test-welcome-title">Статус вашей заявки</div>
 
-                <div class="test-welcome-text active">
-                    <center>Заявка находится на рассмотрении</center>
-                </div>
+                <? if ($accepted === true): ?>
+                    <div class="test-welcome-text active">
+                        <center>Ваша заявка принята. Пожалуйста, дождитесь начала 2 тура.</center>
+                    </div>
+                <? else: ?>
+                    <div class="test-welcome-text active">
+                        <center>Заявка находится на рассмотрении</center>
+                    </div>
+                <? endif ?>
             </div>
 
             

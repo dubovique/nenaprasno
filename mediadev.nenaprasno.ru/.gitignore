@@ -3,6 +3,8 @@ node_modules
 /public/upload
 /public/.top.menu.php
 /public/.bottom.menu.php
+/public/about
+/public/contacts
 **/.section.php
 **/.access.php
 **/.DS_Store
