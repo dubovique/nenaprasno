@@ -8,8 +8,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
     <footer class="main-footer">
         <div class="wrapper">
-            <a href="/" class="main-footer-logo">
-                <img src="/assets/images/logo.svg" alt="Profilaktika Media — Ненапрасно" width="140">
+            <a href="http://nenaprasno.webglyphs.ru/" class="main-footer-logo">
+                <img src="/assets/images/fond-logo.svg" alt="Фонд профилактики рака. Живу не напрасно." width="175">
             </a>
             <a href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/" target="_blank" class="main-footer-additional-logo" >
                 <img src="/assets/images/pgrants_logo.svg" alt="Фонд президентских грантов"  width="140">
