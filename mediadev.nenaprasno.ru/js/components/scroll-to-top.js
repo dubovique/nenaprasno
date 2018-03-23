@@ -10,7 +10,9 @@
         });
 
         function display() {
-            if ($(window).scrollTop() > 600) {
+            var bottom_btn = $('.scroll-to-top').offset().top + $('.scroll-to-top').height();
+            var top_footer = $('footer').offset().top;
+            if (($(window).scrollTop() > 600) && (bottom_btn < top_footer)) {
                 $scrollBtn.addClass('active');
             } else {
                 $scrollBtn.removeClass('active');
