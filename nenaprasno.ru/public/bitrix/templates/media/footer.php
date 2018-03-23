@@ -8,7 +8,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
     <footer class="main-footer">
         <div class="wrapper">
-            <a href="http://nenaprasno.webglyphs.ru/" class="main-footer-logo">
+            <a href="http://nenaprasno.ru/" target="_blank" class="main-footer-logo">
                 <img src="/assets/images/fond-logo.svg" alt="Фонд профилактики рака. Живу не напрасно." width="175">
             </a>
             <a href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/" target="_blank" class="main-footer-additional-logo" >
