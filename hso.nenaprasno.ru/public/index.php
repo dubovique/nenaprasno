@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Главная");
         <?
         $APPLICATION->IncludeComponent("bitrix:news.list", "hso-partners", array(
             "IBLOCK_ID" => "2",
-            "NEWS_COUNT" => "4",
+            "NEWS_COUNT" => "8",
             "SORT_BY1" => "SORT",
             "SORT_ORDER1" => "ASC",
             "FIELD_CODE" => array(),
