@@ -21,7 +21,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 <a href="https://www.facebook.com/profilaktikamedia/" target="_blank" class="main-footer-socials-item">
                     <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-facebook.svg"); ?>
                 </a>
-                <a href="https://t.me/stupid_cancer" target="_blank" class="main-footer-socials-item">
+                <a href="https://t.me/profilaktikamedia" target="_blank" class="main-footer-socials-item">
                     <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-telegram.svg"); ?>
                 </a>
                 <a href="https://vk.com/profilaktikamedia" target="_blank" class="main-footer-socials-item">
