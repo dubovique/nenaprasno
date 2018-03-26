@@ -13723,7 +13723,7 @@
 	
 	var config = {
 	    cabinetURL: "http://cabinet.nenaprasno.ru",
-	    apiUrl: "http://test.appercode.com/v1/notnap",
+	    apiUrl: "https://appercode.nenaprasno.ru/v1/notnap",
 	    messages: {
 	        confirmLogout: "Вы действительно хотите выйти? Все несохраненные данные будут утеряны.",
 	        confirmSkipAuth: "Вы действительно пропустить этап авторизации? Вы не сможете просмотреть все результаты теста без учетной записи.",
