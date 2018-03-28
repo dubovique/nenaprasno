@@ -145,12 +145,12 @@ $APPLICATION->SetTitle("Главная");
     <section class="news-block p-b-xxl p-t-xxl">
         <div class="wrapper">
             <div class="block-title">
-                <a href="/fund/news/" style="text-decoration: none; color: black;">Новости и события</a>
+                <a href="/fund/news-and-events/" style="text-decoration: none; color: black;">Новости и события</a>
             </div>
 
             <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"mainsite-newsblock", 
+	"bitrix:news.list",
+	"mainsite-newsblock",
 	array(
 		"ADD_SECTIONS_CHAIN" => "N",
 		"CACHE_FILTER" => "N",
@@ -164,7 +164,7 @@ $APPLICATION->SetTitle("Главная");
 			1 => "DATE_CREATE",
 			2 => "",
 		),
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "25",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"NEWS_COUNT" => "4",
 		"PAGER_SHOW_ALWAYS" => "N",
@@ -212,7 +212,7 @@ $APPLICATION->SetTitle("Главная");
 );?>
 
             <div class="project-block-load-more">
-                <a href="/fund/news/" class="button button-gray-hollow button-round" style="width: 240px;">Ещё новости и события</a>
+                <a href="/fund/news-and-events/" class="button button-gray-hollow button-round" style="width: 240px;">Ещё новости и события</a>
             </div>
         </div>
     </section>

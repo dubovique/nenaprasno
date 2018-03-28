@@ -1,6 +1,6 @@
 <? if (count($arResult['ITEMS'])): ?>
     <div class="news-module m-b-lg">
-        <div class="news-module-title">Новости проекта</div>
+        <div class="news-module-title">Новости и события проекта</div>
             <? foreach ($arResult['ITEMS'] as $item): ?>
                 <a href="<?=$item['DETAIL_PAGE_URL']?>" class="news-module-item">
                     <div class="news-module-item-image" style="margin-bottom: 0; position: relative;">
@@ -21,7 +21,7 @@
                     </div>
                 </a>
             <? endforeach ?>
-            <a href="/fund/news/" class="news-module-read-all">Посмотреть все новости</a>
+            <a href="/fund/news-and-events/" class="news-module-read-all">Посмотреть все новости и события</a>
         </div>
     </div>
 <? endif ?>
