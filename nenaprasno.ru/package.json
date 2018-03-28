@@ -28,5 +28,7 @@
     "normalize.css": "^7.0.0",
     "tippy.js": "^1.4.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
 }

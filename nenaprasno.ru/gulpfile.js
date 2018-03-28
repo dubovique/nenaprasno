@@ -30,6 +30,7 @@ gulp.task('less', function() {
 var jsFiles = [
         './node_modules/jquery/dist/jquery.js',
         './node_modules/bxslider/dist/jquery.bxslider.js',
+        './node_modules/slick-carousel/slick/slick.js',
         './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         './node_modules/jquery-mask-plugin/dist/jquery.mask.js',
         './node_modules/flatpickr/dist/flatpickr.js',
