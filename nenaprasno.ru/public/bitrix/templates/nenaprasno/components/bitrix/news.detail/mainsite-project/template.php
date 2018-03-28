@@ -42,7 +42,7 @@
     </div>
 </div>
 
-</div> 
+</div>
 
 <?if($arResult['PROPERTIES']['CANDONATE']['VALUE']=='Y'):?>
 	<? if ($arResult['donations']): ?>
@@ -59,7 +59,7 @@
 		  <? if ($arResult['percentsLeft'] > 0): ?>
 			<div class="project-preview-donation-bar-section project-preview-donation-bar-gray" style="width: <?=$arResult['percentsLeft']?>%;"></div>
 		  <? endif ?>
-		
+
 
 		  <? if (($arResult['steps'])): ?>
 			<? foreach ($arResult['steps'] as $step): ?>
@@ -94,7 +94,7 @@
 	<? endif ?>
 <?endif;?>
 
-<div class="wrapper"> 
+<div class="wrapper">
 
 <div class="main-wrapper">
     <div class="main-wrapper-column">
@@ -196,7 +196,7 @@
             $projectNewsFilter = ['PROPERTY_PROJECTS' => $arResult['ID']];
             $APPLICATION->IncludeComponent("bitrix:news.list", "mainsite-news-on-projects", array(
               "FILTER_NAME" => "projectNewsFilter",
-              "IBLOCK_ID" => "5",
+              "IBLOCK_ID" => "25",
               "NEWS_COUNT" => "5",
               "SORT_BY1" => "ID",
               "SORT_ORDER1" => "DESC",
