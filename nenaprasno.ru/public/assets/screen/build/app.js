@@ -19314,7 +19314,11 @@
 	                console.log(error.response.status);
 	                console.log(error.response.headers);
 	
-	                vm.error = "Ошибка: " + error.response.status;
+	                if (error.response.status === 401) {
+	                    vm.error = "Ошибка авторизации: неверный логин и/или пароль.";
+	                } else {
+	                    vm.error = "Ошибка: " + error.response.status;
+	                }
 	            } else {
 	                // Something happened in setting up the request that triggered an Error
 	                vm.error = "Ошибка запроса";
@@ -21035,6 +21039,8 @@
 	//
 	//
 	//
+	//
+	//
 	
 	var config = __webpack_require__(10);
 	
@@ -21059,15 +21065,17 @@
 	    staticClass: "form-success-modal-icon"
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "form-success-modal-title"
-	  }, [_vm._v("\n            Спасибо\n        ")]), _vm._v(" "), _c('div', {
-	    staticClass: "form-success-modal-desc"
-	  }, [_vm._v("\n            Присоединяйтесь к проектам Фонда профилактики рака - нам нужна ваша поддержка!\n        ")]), _vm._v(" "), _c('a', {
+	  }, [_vm._v("\n            Спасибо\n        ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('a', {
 	    staticClass: "form-success-modal-submit",
 	    attrs: {
 	      "href": _vm.config.cabinetURL
 	    }
 	  }, [_vm._v("В личный кабинет")])])])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "form-success-modal-desc"
+	  }, [_c('p', [_c('b', [_vm._v("Сейчас вы будете автоматически перенаправлены в личный кабинет…")])])])
+	}]}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
