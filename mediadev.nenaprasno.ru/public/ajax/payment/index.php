@@ -51,10 +51,10 @@ if ($gate == 'robokassa')
 {
   $sum = $_REQUEST['sum'];
 
-  $crc = md5(ROBOKASSA_SHOP_ID . ":$sum:$orderID:" . ROBOKASSA_PASSWORD_1);
+  $crc = md5(ROBOKASSA_SHOP_ID_MEDIA . ":$sum:$orderID:" . ROBOKASSA_PASSWORD_1_MEDIA);
   $response = [
     'success' => true,
-    'href' => "https://auth.robokassa.ru/Merchant/Index.aspx?MrchLogin=".ROBOKASSA_SHOP_ID."&OutSum=$sum&InvId=$orderID&Desc=$title&SignatureValue=$crc&Email={$_REQUEST[email]}&IsTest=1",
+    'href' => "https://auth.robokassa.ru/Merchant/Index.aspx?MrchLogin=".ROBOKASSA_SHOP_ID_MEDIA."&OutSum=$sum&InvId=$orderID&Desc=$title&SignatureValue=$crc&Email={$_REQUEST[email]}&IsTest=1",
     'gate' => 'robokassa'
   ];
 
@@ -67,9 +67,9 @@ elseif ($gate == 'cp')
 {
   $response = [
     'success' => true,
-    'pubkey' => CP_PUBLIC_KEY,
+    'pubkey' => CP_PUBLIC_KEY_MEDIA,
     'gate' => 'cp',
-    'sum' => 1 ? 1 : floatval($_REQUEST['sum']),
+    'sum' => floatval($_REQUEST['sum']),
     'email' => $_REQUEST['email'],
     'description' => $title,
     'firstname' => $_REQUEST['name'],
