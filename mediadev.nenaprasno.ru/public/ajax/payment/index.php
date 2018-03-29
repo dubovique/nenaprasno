@@ -54,7 +54,7 @@ if ($gate == 'robokassa')
   $crc = md5(ROBOKASSA_SHOP_ID_MEDIA . ":$sum:$orderID:" . ROBOKASSA_PASSWORD_1_MEDIA);
   $response = [
     'success' => true,
-    'href' => "https://auth.robokassa.ru/Merchant/Index.aspx?MrchLogin=".ROBOKASSA_SHOP_ID_MEDIA."&OutSum=$sum&InvId=$orderID&Desc=$title&SignatureValue=$crc&Email={$_REQUEST[email]}&IsTest=1",
+    'href' => "https://auth.robokassa.ru/Merchant/Index.aspx?MrchLogin=".ROBOKASSA_SHOP_ID_MEDIA."&OutSum=$sum&InvId=$orderID&Desc=$title&SignatureValue=$crc&Email={$_REQUEST[email]}",
     'gate' => 'robokassa'
   ];
 
