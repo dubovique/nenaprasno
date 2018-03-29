@@ -72,7 +72,12 @@
 
 .form-part-0 .form-section-0 .form-group-0 .form-control-radiobuttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+.form-part-0 .form-section-0 .form-group-0 .form-control-feedback {
+    flex: 1 0 100%;
 }
 
 @media (max-width: 590px) {

@@ -33,7 +33,11 @@ function userLogin(vm) {
                 console.log(error.response.status);
                 console.log(error.response.headers);
 
-                vm.error = "Ошибка: " + error.response.status;
+                if (error.response.status === 401) {
+                    vm.error = "Ошибка авторизации: неверный логин и/или пароль.";
+                } else {
+                    vm.error = "Ошибка: " + error.response.status;
+                }
             } else {
                 // Something happened in setting up the request that triggered an Error
                 vm.error = "Ошибка запроса";
