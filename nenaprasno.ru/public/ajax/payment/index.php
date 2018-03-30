@@ -69,7 +69,7 @@ elseif ($gate == 'cp')
     'success' => true,
     'pubkey' => CP_PUBLIC_KEY,
     'gate' => 'cp',
-    'sum' => 1 ? 1 : floatval($_REQUEST['sum']),
+    'sum' => floatval($_REQUEST['sum']),
     'email' => $_REQUEST['email'],
     'description' => $title,
     'firstname' => $_REQUEST['name'],
