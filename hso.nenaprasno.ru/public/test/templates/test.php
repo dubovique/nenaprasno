@@ -1,13 +1,13 @@
 <? $remining = round(getReminingTime($testInfo)); ?>
 <div class="test-welcome" data-remaining="<?=$remining?>">
-  <div class="test-welcome-title">2 тур конкурса ВШО 2017</div>
+  <div class="test-welcome-title">2 тур конкурса ВШО 2018</div>
 
   <div class="test-welcome-text active">
       <center>
         <? if ($testInfo['end']): ?>
           Ваши ответы сохранены, но до окончания времени тестирования вы можете их уточнить.
           <div class="test-welcome-button">
-              <a href="/" class="button button-blue button-round">Закончить и вернуться на главную</a>
+              <a href="/letter/" class="button button-blue button-round">Закончить и перейти к мотивационному письму</a>
           </div>
         <? endif ?>
       </center>
