@@ -1,10 +1,11 @@
-const Vuex = require('vuex');
-const userAPI = require('./api/user');
-const formAPI = require('./api/form');
-const objectAPI = require('./api/object');
+const Vuex = require('vuex'),
+    userAPI = require('./api/user'),
+    formAPI = require('./api/form'),
+    objectAPI = require('./api/object');
 
 // Helpers
-const fillUserFields = require('./helpers/fillUserFields');
+const fillUserFields = require('./helpers/fillUserFields'),
+    getUserProfile = require('./helpers/getUserProfile');
 
 module.exports = new Vuex.Store({
     state: {
@@ -48,7 +49,12 @@ module.exports = new Vuex.Store({
                 birthdate: null
             }
         },
-        regions: []
+        regions: [],
+        spinner: true,
+        appError: {
+            status: false,
+            message: null
+        }
     },
     mutations: {
         setTotalParts(state, n) {
@@ -64,18 +70,18 @@ module.exports = new Vuex.Store({
             state.current--;
         },
         addControl(state, control) {
-            let foundControls = state.form.data.filter(function (v) {
-                return v.controlId == control.controlId;
-            })[0];
+            let foundControls = state.form.data.find(v => {
+                return v.controlId === control.controlId;
+            });
 
             if (!foundControls) {
                 state.form.data.push(control);
             }
         },
         addResultControl(state, control) {
-            let foundControls = state.form.resultData.filter(function (v) {
-                return v.controlId == control.controlId;
-            })[0];
+            let foundControls = state.form.resultData.find(v => {
+                return v.controlId === control.controlId;
+            });
 
             if (!foundControls) {
                 state.form.resultData.push(control);
@@ -86,7 +92,7 @@ module.exports = new Vuex.Store({
         },
         setControlValue(state, payload) {
             state.form.data.forEach(function (c) {
-                if (payload.id == c.controlId) {
+                if (payload.id === c.controlId) {
                     c.value = payload.value;
                     c.controlShown = true;
                 }
@@ -94,14 +100,14 @@ module.exports = new Vuex.Store({
         },
         setControlShowErrors(state, payload) {
             state.form.data.forEach(function (c) {
-                if (payload.id == c.controlId) {
+                if (payload.id === c.controlId) {
                     c.showErrors = payload.showErrors;
                 }
             });
         },
         setControlDisplay(state, payload) {
             state.form.data.forEach(function (c) {
-                if (payload.id == c.controlId) {
+                if (payload.id === c.controlId) {
                     c.display = payload.display;
 
                     if (payload.display) {
@@ -112,7 +118,7 @@ module.exports = new Vuex.Store({
         },
         setControlValid(state, payload) {
             state.form.data.forEach(function (c) {
-                if (payload.id == c.controlId) {
+                if (payload.id === c.controlId) {
                     c.valid = payload.valid;
                 }
             });
@@ -155,6 +161,15 @@ module.exports = new Vuex.Store({
         },
         showResult(state) {
             state.showResult = true;
+        },
+        showSpinner(state) {
+            state.spinner = true;
+        },
+        hideSpinner(state) {
+            state.spinner = false;
+        },
+        setAppError(state, payload) {
+            state.appError = payload;
         }
     },
     actions: {
@@ -194,24 +209,7 @@ module.exports = new Vuex.Store({
             });
         },
         fetchUserProfile(context) {
-            return new Promise((resolve, reject) => {
-                objectAPI.objectsBySchemaIdGet(
-                    'UserProfiles',
-                    {
-                        where: {
-                            userId: context.state.user.userId
-                        }
-                    },
-                    context.state.user.sessionId
-                    )
-                    .then(response => {
-                        context.commit('setUserProfileData', response.data[0]);
-                        resolve();
-                    })
-                    .catch(e => {
-                        reject(e);
-                    });
-            });
+            return getUserProfile(context);
         },
         fetchRegions(context) {
             return new Promise((resolve, reject) => {
@@ -230,60 +228,64 @@ module.exports = new Vuex.Store({
             });
         },
         parseFormData(context, formData) {
-            // Count Parts in Form
-            context.commit('setTotalParts', formData.parts.length);
+            return new Promise((resolve, reject) => {
+                // Count Parts in Form
+                context.commit('setTotalParts', formData.parts.length);
 
-            // Count Sections in Form
-            let totalSections = 0;
-            formData.parts.forEach(function(part) {
-                Object.keys(part).forEach(function (key) {
-                    if (key == 'sections') {
-                        totalSections += part[key].length;
-                    }
-                });
-            });
-            context.commit('setTotalSections', totalSections);
-
-            // Parse & store all inputs
-            function parseParts(part, isResultPart = false) {
-                part.sections.forEach(function (section) {
-                    section.groups.forEach(function (group) {
-                        if (group.controls) {
-                            group.controls.forEach(function (control) {
-                                let newControl = {
-                                    controlId: control.id,
-                                    controlClass: control.class,
-                                    controlTitle: control.title,
-                                    controlType: control.type,
-                                    display: false,
-                                    controlShown: false,
-                                    showErrors: false,
-                                    errorMessages: [],
-                                    value: null
-                                };
-
-                                if (control.options) {
-                                    newControl.options = control.options;
-                                }
-
-                                // Prefill user fields from cabinet
-                                fillUserFields(newControl, context);
-
-                                if (isResultPart) {
-                                    context.commit('addResultControl', newControl);
-                                } else {
-                                    context.commit('addControl', newControl)
-                                }
-                            });
+                // Count Sections in Form
+                let totalSections = 0;
+                formData.parts.forEach(function(part) {
+                    Object.keys(part).forEach(function (key) {
+                        if (key == 'sections') {
+                            totalSections += part[key].length;
                         }
                     });
                 });
-            }
-            formData.parts.forEach(function(part) {
-                parseParts(part);
-            });
+                context.commit('setTotalSections', totalSections);
 
-            parseParts(formData.resultPart, true);
+                // Parse & store all inputs
+                function parseParts(part, isResultPart = false) {
+                    part.sections.forEach(function (section) {
+                        section.groups.forEach(function (group) {
+                            if (group.controls) {
+                                group.controls.forEach(function (control) {
+                                    let newControl = {
+                                        controlId: control.id,
+                                        controlClass: control.class,
+                                        controlTitle: control.title,
+                                        controlType: control.type,
+                                        display: false,
+                                        controlShown: false,
+                                        showErrors: false,
+                                        errorMessages: [],
+                                        value: null
+                                    };
+
+                                    if (control.options) {
+                                        newControl.options = control.options;
+                                    }
+
+                                    // Prefill user fields from cabinet
+                                    fillUserFields(newControl, context);
+
+                                    if (isResultPart) {
+                                        context.commit('addResultControl', newControl);
+                                    } else {
+                                        context.commit('addControl', newControl)
+                                    }
+                                });
+                            }
+                        });
+                    });
+                }
+                formData.parts.forEach(function(part) {
+                    parseParts(part);
+                });
+
+                parseParts(formData.resultPart, true);
+
+                resolve();
+            });
         },
         changeStep(context, action) {
             switch (action) {

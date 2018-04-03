@@ -21,7 +21,7 @@ function userLogin(vm) {
                 vm.progress = false;
                 vm.closeModal();
 
-                getUserProfile(vm);
+                getUserProfile(vm.$store);
 
                 resolve();
             }

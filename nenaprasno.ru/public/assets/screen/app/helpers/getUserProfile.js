@@ -1,42 +1,41 @@
-"use strict";
+const config = require('../config'),
+    userAPI = require('../api/user');
 
-const config = require('../config');
-const userAPI = require('../api/user');
+function getUserProfile($store) {
+    return new Promise((resolve, reject) => {
+        let userId = $store.state.user.userId || $store.state.user.id,
+            token = $store.state.user.sessionId;
 
-function getUserProfile(vm) {
-    let userId = vm.$store.state.user.userId || vm.$store.state.user.id,
-        token = vm.$store.state.user.sessionId;
-
-    userAPI.getProfiles(token, userId).then(response => {
-        console.log(response);
-
-        let fundProfile = response.data.find(profile => {
-            return profile.schemaId == config.userProfileName;
-        });
-
-        console.log(fundProfile);
-
-        if (fundProfile) {
-            userAPI.getProfile(token, fundProfile.itemId).then(result => {
-                console.log(result);
-
-                vm.$store.commit('setUserProfileData', result.data);
-
-            }).catch(error => {
-                //todo: process error
-                console.log (error);
-            });
-        } else {
-            userAPI.assignProfile(token, config.userProfileName, { userId: userId })
-                .then(result => {
-                    vm.$store.commit('setUserProfileData', result.data);
-                })
-                .catch(error => {
-                    //todo: process error
+        userAPI.getProfiles(token, userId)
+            .then(response => {
+                let fundProfile = response.data.find(profile => {
+                    return profile.schemaId === config.userProfileName;
                 });
-        }
-    }).catch(error => {
-        console.log(error);
+
+                if (fundProfile) {
+                    userAPI.getProfile(token, fundProfile.itemId)
+                        .then(result => {
+                            $store.commit('setUserProfileData', result.data);
+                            resolve(result.data);
+                        })
+                        .catch(error => {
+                            reject(error);
+                            console.log (error);
+                        });
+                } else {
+                    userAPI.assignProfile(token, config.userProfileName, { userId: userId })
+                        .then(result => {
+                            $store.commit('setUserProfileData', result.data);
+                            resolve(result.data);
+                        })
+                        .catch(error => {
+                            reject(error);
+                        });
+                }
+            })
+            .catch(error => {
+                reject(error);
+            });
     });
 }
 

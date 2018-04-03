@@ -52,37 +52,38 @@
                     this.$store.dispatch('changeStep', action);
                     // Scrolling to top of next page
                     this.$root.$el.scrollIntoView(true);
-                } else {
-                    console.log(this.part);
                 }
             },
             submitForm() {
                 if ( pageValidation(this.part, this.$store) ) {
-                    let _this = this;
 
-                    formSubmit(_this)
+                    this.$store.commit('showSpinner');
+
+                    formSubmit(this)
                         .then(response => {
                             alert(config.messages.successFormPost);
 
                             // Scrolling to top of next page
                             this.$root.$el.scrollIntoView(true);
 
-                            if (!_this.$store.state.user || _this.$store.state.user.isAnonymous) {
-                                _this.$store.commit('setSubmitAuthModal', true);
+                            if (!this.$store.state.user || this.$store.state.user.isAnonymous) {
+                                this.$store.commit('setSubmitAuthModal', true);
                             }
 
-                            _this.$store.commit('setFormResponse', response.data);
+                            this.$store.commit('setFormResponse', response.data);
 
                             // Go to form result page
-                            _this.$store.dispatch('changeStep', 'next');
+                            this.$store.dispatch('changeStep', 'next');
 
-                            if (!_this.$store.state.user.isAnonymous) {
-                                _this.$store.commit('setSuccessModal', true);
+                            this.$store.commit('hideSpinner');
+
+                            if (!this.$store.state.user.isAnonymous) {
+                                this.$store.commit('setSuccessModal', true);
 
                                 setTimeout(() => {
-                                    _this.$store.state.form = {};
-                                    _this.$store.state.user = {};
-                                    _this.$store.state.userProfile = {};
+                                    this.$store.state.form = {};
+                                    this.$store.state.user = {};
+                                    this.$store.state.userProfile = {};
                                     window.sessionStorage.clear();
                                 }, 2000);
 
@@ -93,18 +94,7 @@
                         })
                         .catch(error => {
                             alert(config.messages.errorSendingFormResults);
-
-                            if (error.response) {
-                                // The request was made, but the server responded with a status code
-                                // that falls out of the range of 2xx
-                                console.log(error.response.data);
-                                console.log(error.response.status);
-                                console.log(error.response.headers);
-                            } else {
-                                // Something happened in setting up the request that triggered an Error
-                                console.log('Error', error.message);
-                            }
-                            console.log(error.config);
+                            this.$store.commit('hideSpinner');
                         });
                 }
             }

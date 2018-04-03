@@ -136,7 +136,7 @@
         },
         methods: {
             closeModal() {
-                getUserProfile(this);
+                getUserProfile(this.$store);
                 this.progress = false;
                 this.submitProfileError = null;
                 this.submitPasswordError = null;
@@ -186,26 +186,19 @@
                     _this.progress = false;_this.progress = false;
                 }).catch(error => {
                     if (error.response) {
-                        // The request was made, but the server responded with a status code
-                        // that falls out of the range of 2xx
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
-
                         _this.submitPasswordError = "Ошибка: " + error.response.status;
                     } else {
                         // Something happened in setting up the request that triggered an Error
                         _this.submitPasswordError = "Ошибка запроса";
                         console.log('Error', error.message);
                     }
-                    console.log(error.config);
 
                     _this.progress = false;
                 });
             }
         },
         mounted() {
-            getUserProfile(this);
+            getUserProfile(this.$store);
 
             if (this.$store.state.userProfile.data) {
                 this.user.name = this.$store.state.userProfile.data.name || "";

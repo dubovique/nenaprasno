@@ -19,6 +19,8 @@ let app = new Vue({
     store: formStore,
     data: {
         config: config,
+        cabinetURL: "https://cabinet.nenaprasno.ru",
+        apiUrl: "https://appercode.nenaprasno.ru/v1/notnap",
         formData: {}
     },
     components: {
@@ -45,7 +47,7 @@ let app = new Vue({
         getCookieSession() {
             let userInfo;
             try {
-                userInfo = JSON.parse(decodeURIComponent(Cookies.get('userInfo')));
+                userInfo = Cookies.get('userInfo') ? JSON.parse(decodeURIComponent(Cookies.get('userInfo'))) : undefined;
                 if (userInfo) {
                     userInfo = {
                         userId: userInfo.id,
@@ -55,10 +57,8 @@ let app = new Vue({
                     }
                 }
             } catch(e) {
-                console.log(e);
+                console.error('Error parsing cookie userInfo. ' + e);
             }
-
-            console.log(userInfo);
 
             return userInfo;
         },
@@ -85,6 +85,8 @@ let app = new Vue({
             });
         },
         init() {
+            this.$store.commit('showSpinner');
+
             let formId = this.$el.dataset.formId;
 
             this.initSessionStorage(formId);
@@ -108,6 +110,9 @@ let app = new Vue({
                     this.formData = res.data;
                     this.$store.dispatch('parseFormData', res.data);
                 })
+                .then(() => {
+                    this.$store.commit('hideSpinner');
+                })
                 .catch(e => {
                     if (e.response && e.response.status === 401) {
                         this.$store.dispatch('loginByToken')
@@ -118,7 +123,14 @@ let app = new Vue({
                                         this.$store.dispatch('parseFormData', res.data);
                                     });
                             });
+                    } else {
+                        this.$store.commit('setAppError', {
+                            status: true,
+                            message: 'Ошибка загрузки формы тестирования. Повторить?'
+                        });
                     }
+
+                    this.$store.commit('hideSpinner');
                 });
         }
     },

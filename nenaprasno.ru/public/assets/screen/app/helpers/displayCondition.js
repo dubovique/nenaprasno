@@ -1,9 +1,9 @@
 "use strict";
 
 function findInStore(id, $store) {
-    return $store.state.form.data.filter(function (v) {
+    return $store.state.form.data.find(v => {
         return v.controlId == id;
-    })[0];
+    });
 }
 
 function displayCondition(el, $store) {
@@ -166,11 +166,11 @@ function displayCondition(el, $store) {
                     break;
             }
 
-            if (displayResults.indexOf(false) < 0) {
+            /*if (displayResults.indexOf(false) < 0) {
                 console.log(`Display results of element: "${el.title ? el.title : ''}" ${el.id} — %c${displayResults}`, "font-weight: bold; color: green;");
             } else {
                 console.log(`Display results of element: "${el.title ? el.title : ''}" ${el.id} — %c${displayResults}`, "font-weight: bold; color: red;");
-            }
+            }*/
         });
 
         result = displayResults.indexOf(false) === -1;

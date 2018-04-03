@@ -576,6 +576,8 @@
     background-color: #fff;
     box-sizing: border-box;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .form-auth-modal-padding {
@@ -633,6 +635,7 @@
     padding: 0 15px;
     box-shadow: none;
     outline: none;
+    margin-bottom: 10px;
 }
 
 .form-auth-modal-input:focus {
@@ -660,6 +663,8 @@
     font-weight: bold;
     font-size: 14px;
     outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .form-auth-modal-submit:hover,
@@ -1077,4 +1082,55 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0
+}
+
+.spinner-overlay {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.spinner-overlay .spinner {
+    width: 64px;
+    height: 64px;
+}
+
+.spinner-overlay .spinner .vue-simple-spinner {
+    width: 100% !important;
+    height: 100% !important;;
+}
+
+.form-app-error {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-app-error-message {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-weight: 500;
+    background: #e1e1e1;
+    font-size: 18px;
+    text-shadow: 1px 1px 0 #fcfcfc;
+    color: #8d8d8d;
+}
+
+.form-app-error-message a {
+    color: inherit;
+    text-decoration: none;
 }

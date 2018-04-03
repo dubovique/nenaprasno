@@ -85,7 +85,6 @@
             },
             loginFb() {
                 FB.getLoginStatus(response => {
-                    console.log(response);
                     if (response.authResponse) {
                         this.handleSocial('fb', response.authResponse.userID);
                     } else {
