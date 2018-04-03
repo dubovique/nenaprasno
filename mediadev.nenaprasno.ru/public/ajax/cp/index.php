@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
-if ($_POST['publicId'] == CP_PUBLIC_KEY)
+if ($_POST['publicId'] == CP_PUBLIC_KEY_MEDIA)
 {
   CModule::IncludeModule('iblock');
 
@@ -18,7 +18,7 @@ if ($_POST['publicId'] == CP_PUBLIC_KEY)
     $project = $order['PROPERTY_PROJECT_VALUE'];
     $res = CIBlockElement::GetByID($project);
     $project = $res->Fetch();
-    
+
 
     $db_props = CIBlockElement::GetProperty($project['IBLOCK_ID'], $project['ID'], array("sort" => "asc"), Array("CODE"=>"COLLECTED"));
     $goal = $db_props->Fetch();

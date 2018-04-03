@@ -31,6 +31,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         </div>
     </footer>
 
+	<script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
+
     <script src="/assets/build/scripts.js"></script>
 
     <script type="text/javascript" >

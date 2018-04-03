@@ -23893,10 +23893,6 @@ var vueApp = new Vue({
                 $(e.target).removeClass('button-blue-hollow').addClass('button-blue');
             }
 
-            window.onbeforeunload = function(){
-                return 'Вы действительно хотите покинуть страницу? Все несохраненные данные будут потеряны.';
-            };
-
             if ( $(_this.$el).find('[data-remaining]').length ) {
                 _this.timer = $(_this.$el).find('[data-remaining]').data('remaining');
 
@@ -23951,7 +23947,6 @@ var vueApp = new Vue({
                 if (!success) {
                     return;
                 }
-                window.onbeforeunload = null;
 
                 $.ajax({
                     method: formMethod,
