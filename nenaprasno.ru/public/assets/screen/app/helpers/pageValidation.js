@@ -37,14 +37,13 @@ function pageValidation(page, $store) {
         }
     });
 
-    console.log(
+    /*console.log(
         `Page validation result: %c${validateResult}`,
         'font-weight: bold;' + validateResult ? 'color: green;' : 'color: red;'
-    );
+    );*/
 
     //Scroll to first unvalid control on page
     if (firstUnvalidControl) {
-        console.log( document.getElementById(firstUnvalidControl[0].controlId) );
         document.getElementById(firstUnvalidControl[0].controlId).scrollIntoView(true);
     }
 

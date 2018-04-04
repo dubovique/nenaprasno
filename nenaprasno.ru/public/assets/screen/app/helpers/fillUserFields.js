@@ -1,9 +1,13 @@
 function fillUserFields(control, store) {
-    const sexFieldName = "t1-p1-s1-g1-c1";
-    const regionFieldName = "reg1";
-    const ageFieldName = "t1-p3-s2-g1-c1";
+    const sexFieldName = "t1-p1-s1-g1-c1",
+        ageFieldName = "t1-p3-s2-g1-c1",
+        regionFieldName = "reg1",
+        sexFieldPrefill = store.state.userProfile.data.sex,
+        ageFieldPrefill = store.state.userProfile.data.birthdate,
+        regionFieldPrefill = store.state.userProfile.data.regionId;
 
-    if (control.controlId === sexFieldName) {
+
+    if (control.controlId === sexFieldName && sexFieldPrefill !== null) {
         store.commit('setControlValue', {
             id: control.controlId,
             value: store.state.userProfile.data.sex
@@ -11,7 +15,8 @@ function fillUserFields(control, store) {
 
         console.log("Sex set as: " + control.value);
     }
-    if (control.controlId === regionFieldName) {
+
+    if (control.controlId === regionFieldName && regionFieldPrefill !== null) {
         if (store.state.userProfile.data.regionId) {
             let foundRegion = store.state.regions.find(region => {
                return region.id === store.state.userProfile.data.regionId;
@@ -25,7 +30,7 @@ function fillUserFields(control, store) {
         }
     }
 
-    if (control.controlId === ageFieldName) {
+    if (control.controlId === ageFieldName && ageFieldPrefill !== null) {
         let bdate = store.state.userProfile.data.birthdate;
         if (bdate) {
             let ageDifMs = Date.now() - new Date(bdate).getTime();

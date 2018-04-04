@@ -64,9 +64,6 @@ function formSubmit(vm) {
         }
     });
 
-    console.log("Form data submit: ");
-    console.log(JSON.stringify(form));
-
     return formAPI.saveFormResults(JSON.stringify(form), vm.$store.state.user.sessionId);
 }
 

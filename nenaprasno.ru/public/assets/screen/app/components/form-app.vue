@@ -22,6 +22,12 @@
         <transition name="fade">
             <form-profile-modal v-if="showProfileModal"></form-profile-modal>
         </transition>
+
+        <transition name="fade">
+            <div v-if="spinner" class="spinner-overlay">
+                <spinner class="spinner" line-fg-color="#00ADF1"></spinner>
+            </div>
+        </transition>
     </form>
 </template>
 
@@ -29,30 +35,37 @@
 </style>
 
 <script>
-    let formBreadcrumbs = require('./form-breadcrumbs.vue'),
+    const Spinner = require('vue-simple-spinner'),
+        formBreadcrumbs = require('./form-breadcrumbs.vue'),
         formPart = require('./form-part.vue'),
         formResult = require('./form-result.vue'),
         formSubmitAuthModal = require('./form-submit-auth-modal.vue'),
         formAuthModal = require('./form-auth-modal.vue'),
         formProfileModal = require('./form-profile-modal.vue'),
         formSuccessModal = require('./form-success-modal.vue'),
+        formAppError = require('./form-app-error.vue'),
 
         displayCondition = require('./../helpers/displayCondition');
 
     module.exports = {
         props: ['form'],
         components: {
+            Spinner,
             'form-breadcrumbs': formBreadcrumbs,
             'form-part': formPart,
             'form-result': formResult,
             'form-submit-auth-modal': formSubmitAuthModal,
             'form-auth-modal': formAuthModal,
             'form-profile-modal': formProfileModal,
-            'form-success-modal': formSuccessModal
+            'form-success-modal': formSuccessModal,
+            'form-app-error': formAppError
         },
         computed: {
             current() {
                 return this.$store.state.current;
+            },
+            spinner() {
+                return this.$store.state.spinner;
             },
             showSubmitAuthModal() {
                 return this.$store.state.showSubmitAuthModal;

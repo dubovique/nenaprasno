@@ -35,25 +35,21 @@
         data() {
             return {
                 value: null,
-                valid: false
+                valid: false,
+                showErrors: false
             }
         },
         computed: {
-            showErrors() {
-                let _this = this;
-                return this.$store.state.form.data.filter(function(ctrl) {
-                    return ctrl.controlId == _this.control.id;
-                })[0].showErrors;
+            storeShowErrors() {
+                return this.$store.state.form.data.find(ctrl => {
+                    return ctrl.controlId === this.control.id;
+                }).showErrors;
             },
             display() {
-                let _this = this;
                 let display = displayCondition(this.control, this.$store);
-                let ctrl = this.$store.state.form.data.filter(function(ctrl) {
-                    return ctrl.controlId == _this.control.id;
-                });
 
-                _this.$store.commit('setControlDisplay', {
-                    id: _this.control.id,
+                this.$store.commit('setControlDisplay', {
+                    id: this.control.id,
                     display: display
                 });
 
@@ -62,15 +58,14 @@
         },
         methods: {
             fetchControl() {
-                let _this = this;
-                let ctrl = this.$store.state.form.data.filter(function(ctrl) {
-                    return ctrl.controlId == _this.control.id;
+                let ctrl = this.$store.state.form.data.find(ctrl => {
+                    return ctrl.controlId === this.control.id;
                 });
 
-                if (ctrl.length) {
-                    _this.value = ctrl[0].value;
-                    _this.valid = ctrl[0].valid;
-                    _this.showErrors = ctrl[0].showErrors;
+                if (ctrl) {
+                    this.value = ctrl.value;
+                    this.valid = ctrl.valid;
+                    this.showErrors = ctrl.showErrors;
                 }
             },
             validate() {
@@ -78,8 +73,7 @@
             }
         },
         watch: {
-            value: function(val, oldVal) {
-                console.log(val, oldVal);
+            value(val, oldVal) {
                 if (oldVal !== val) {
                     this.validate();
 
@@ -95,6 +89,9 @@
                         showErrors: true
                     });
                 }
+            },
+            storeShowErrors(val) {
+                this.showErrors = val;
             }
         },
         mounted() {

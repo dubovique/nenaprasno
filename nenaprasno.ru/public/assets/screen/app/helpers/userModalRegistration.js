@@ -10,18 +10,12 @@ function login(vm, response) {
         vm.$store.commit('setUser', response.data);
         vm.$store.commit('setUsername', vm.login);
         vm.closeModal();
-        getUserProfile(vm);
+        getUserProfile(vm.$store);
     });
 }
 
 function processError(vm, error) {
     if (error.response) {
-        // The request was made, but the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-
         // User already exists
         if (error.response.status == 409) {
             vm.error = "Ошибка: " + config.messages.errorUserAlreadyExists;
@@ -37,7 +31,6 @@ function processError(vm, error) {
         vm.error = "Ошибка запроса";
         console.log('Error', error.message);
     }
-    console.log(error.config);
 }
 
 function userRegistration(vm) {
