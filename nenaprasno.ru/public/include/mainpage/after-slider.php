@@ -38,6 +38,6 @@
         </div>
     </div>
     <div class="header-slider-about-mobile">
-        <a href="#" class="button button-orange button-round">Пройти тест Screen</a>
+        <a href="/screen/" class="button button-orange button-round">Пройти тест Screen</a>
     </div>
 </div>
