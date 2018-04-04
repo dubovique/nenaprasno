@@ -4,15 +4,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?><!DOCTYPE html>
 <html>
 	<head>
-
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M2WT6RQ');</script>
-		<!-- End Google Tag Manager -->
-
 		<?$APPLICATION->ShowHead();?>
 		<title><?$APPLICATION->ShowTitle();?></title>
 		<link rel="stylesheet" href="/assets/build/style.min.css">
@@ -22,15 +13,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <meta property="og:url" content="<?$APPLICATION->ShowProperty("url", htmlspecialchars($_SERVER['SERVER_NAME'] .  $_SERVER['REQUEST_URI']))?>"/>
         <meta property="og:description" content="<?$APPLICATION->ShowProperty("d", "Сайт Фонда профилактики рака")?>" />
         <meta property="og:title" content="<?$APPLICATION->ShowProperty("t", $APPLICATION->GetTitle())?>" />
-        <meta property="og:image" content="<?$APPLICATION->ShowProperty("image", "http://nenaprasno.webglyphs.ru/assets/images/slider/slider-image-1.jpg")?>"/>
-        <meta property="og:image:url" content="<?$APPLICATION->ShowProperty("image", "http://nenaprasno.webglyphs.ru/assets/images/slider/slider-image-1.jpg")?>"/>
+        <meta property="og:image" content="<?$APPLICATION->ShowProperty("image", "https://nenaprasno.ru/assets/images/slider/slider-image-1.jpg")?>"/>
+        <meta property="og:image:url" content="<?$APPLICATION->ShowProperty("image", "https://nenaprasno.ru/assets/images/slider/slider-image-1.jpg")?>"/>
 	</head>
 	<body>
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2WT6RQ"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
 
 	<? if ($USER->IsAdmin()): ?>
 		<? $APPLICATION->ShowPanel(); ?>
@@ -89,10 +75,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
                 <div class="main-header-button-login">
                     <? if (is_null($user)): ?>
-                        <a href="http://cabinet.nenaprasno.ru/registration">Регистрация</a>
-                        <a href="http://cabinet.nenaprasno.ru/login">Вход</a>
+                        <a href="<?=CABINET_URL?>/registration">Регистрация</a>
+                        <a href="<?=CABINET_URL?>/login">Вход</a>
                     <? else: ?>
-                        <a href="http://cabinet.nenaprasno.ru">
+                        <a href="<?=CABINET_URL?>">
                             <span style="margin-right: 20px">
                                 <? if (isset($user->userName)): ?>
                                     <?=$user->userName?>
@@ -101,7 +87,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                                 <? endif ?>
                             </span>
                         </a>
-                        <a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
+                        <a href="<?=CABINET_URL?>/logout">Выход</a>
                     <? endif ?>
                 </div>
             </div>
@@ -129,21 +115,20 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="main-offcanvas-user">
                 <div class="main-offcanvas-padding">
                     <? if (is_null($user)): ?>
-                        <a href="http://cabinet.nenaprasno.ru/login" class="main-offcanvas-user-login">
+                        <a href="<?=CABINET_URL?>/login" class="main-offcanvas-user-login">
                             Войти на сайт
                         </a>
-                        <a href="http://cabinet.nenaprasno.ru/registration" class="main-offcanvas-user-link">
+                        <a href="<?=CABINET_URL?>/registration" class="main-offcanvas-user-link">
                             Зарегистрироваться
                         </a>
                     <? else: ?>
-                        <a href="http://cabinet.nenaprasno.ru" class="main-offcanvas-user-link">
+                        <a href="<?=CABINET_URL?>" class="main-offcanvas-user-link">
                             Личный кабинет
                         </a>
-                        <a href="http://cabinet.nenaprasno.ru/logout" class="main-offcanvas-user-link">
+                        <a href="<?=CABINET_URL?>/logout" class="main-offcanvas-user-link">
                             Выход
                         </a>
                     <? endif ?>
-
                 </div>
             </div>
         </nav>

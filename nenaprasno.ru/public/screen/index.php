@@ -1,7 +1,26 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle("Главная");
-?><div id="app" data-form-id="1">
+
+$obCache = new CPHPCache();
+$cachePath = '/nenaprasno.ru/screen-users/';
+if( $obCache->InitCache(600, 'screen-users', $cachePath) ) {
+    $vars = $obCache->GetVars();
+    $users = $vars['screen-users'];
+}
+elseif( $obCache->StartDataCache()  ) {
+    $request = curl_init();
+	curl_setopt($request, CURLOPT_URL, CABINET_URL . '/users');
+	curl_setopt ($request, CURLOPT_RETURNTRANSFER, 1);
+	$result = curl_exec($request);
+	curl_close ($request);
+	$result = json_decode($result);
+	$users = $result->users;
+    $obCache->EndDataCache(array('screen-users' => $users));
+}
+
+?>
+
+<div id="app" data-form-id="1">
  <main class="main-content">
 	<div class="wrapper">
 		<form-app :form="formData"></form-app>
@@ -14,7 +33,7 @@ $APPLICATION->SetTitle("Главная");
  <img src="/assets/images/icons-testers.png" alt="">
 	</div>
 	<div class="testers-counter-block-num">
-		 146 083
+		<?=number_format($users, 0, '', ' ')?>
 	</div>
 	<div class="testers-counter-block-desc">
 		 людей протестировано

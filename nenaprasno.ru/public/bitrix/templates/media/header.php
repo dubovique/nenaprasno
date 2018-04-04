@@ -53,11 +53,11 @@ if(!$meta_image)
             <div class="main-header-userarea">
                 <div class="main-header-userarea-links">
 					<? if (is_null($user)): ?>
-						<a href="http://cabinet.nenaprasno.ru/login">Вход</a>
+						<a href="<?=CABINET_URL?>/login">Вход</a>
 						<br>
-						<a href="http://cabinet.nenaprasno.ru/registration">Регистрация</a>
+						<a href="<?=CABINET_URL?>/registration">Регистрация</a>
 					<? else: ?>
-						<a href="http://cabinet.nenaprasno.ru">
+						<a href="<?=CABINET_URL?>">
 							<span style="margin-right: 20px">
 								<? if (isset($user->userName)): ?>
 									<?=$user->userName?>
@@ -67,7 +67,7 @@ if(!$meta_image)
 							</span>
 						</a>
 						<br>
-						<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
+						<a href="<?=CABINET_URL?>/logout">Выход</a>
 					<? endif ?>
                 </div>
             </div>
@@ -94,19 +94,21 @@ if(!$meta_image)
 		<?if(0)://скрыть вход/регистрацию?>
 			<div class="main-offcanvas-padding">
 				<? if (is_null($user)): ?>
-					<a href="http://cabinet.nenaprasno.ru/login">Войти</a> &nbsp;|&nbsp; <a href="http://cabinet.nenaprasno.ru/registration">Зарегистрироваться</a>
+					<a href="<?=CABINET_URL?>/login">Войти</a>
+					&nbsp;|&nbsp;
+					<a href="<?=CABINET_URL?>/registration">Зарегистрироваться</a>
 				<? else: ?>
-						<a href="http://cabinet.nenaprasno.ru">
-							<span style="margin-right: 20px">
-								<? if (isset($user->userName)): ?>
-									<?=$user->userName?>
-								<? else: ?>
-									Личный кабинет
-								<? endif ?>
-							</span>
-						</a>
-						 &nbsp;|&nbsp;
-						<a href="http://cabinet.nenaprasno.ru/logout">Выход</a>
+					<a href="<?=CABINET_URL?>">
+						<span style="margin-right: 20px">
+							<? if (isset($user->userName)): ?>
+								<?=$user->userName?>
+							<? else: ?>
+								Личный кабинет
+							<? endif ?>
+						</span>
+					</a>
+					 &nbsp;|&nbsp;
+					<a href="<?=CABINET_URL?>/logout">Выход</a>
 				<? endif ?>
 			</div>
 		<?endif;?>
