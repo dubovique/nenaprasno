@@ -380,7 +380,7 @@
     .form-flexbox-col-100,
     .form-flexbox-col-150px,
     .form-flexbox-col-300px {
-        flex-basis: 100%;
+        flex-basis: unset;
     }
 }
 
