@@ -39,18 +39,39 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     </a>
                 <? endif ?>
             </div>
-            <div class="main-header-right">
-				<div class="main-header-contacts phone-col">
-					<? $APPLICATION->IncludeFile('/include/phone.php'); ?>
-				</div>
-				<div class="main-header-contacts mail-col">
-					<a href="mailto:fond@nenaprasno.ru" class="main-header-contacts-email">
-						<img src="/assets/images/close-envelope.svg">
-						fond@nenaprasno.ru
-					</a>
-				</div>
 
-                <div class="main-header-separator"></div>
+            <div class="main-header-contacts">
+                <div class="main-header-contacts-phone">
+                    <? $APPLICATION->IncludeFile('/include/phone.php'); ?>
+                </div>
+                <div class="main-header-contacts-mail">
+                    <a href="mailto:fond@nenaprasno.ru" class="main-header-contacts-email">
+                        <img src="/assets/images/close-envelope.svg">
+                        fond@nenaprasno.ru
+                    </a>
+                </div>
+            </div>
+
+            <div class="main-header-right">
+                <? $user = getAppercodeUser(); ?>
+
+                <div class="main-header-button-login">
+                    <? if (is_null($user)): ?>
+                        <a href="<?=CABINET_URL?>/login">Вход</a>
+                        <a href="<?=CABINET_URL?>/registration">Регистрация</a>
+                    <? else: ?>
+                        <a href="<?=CABINET_URL?>">
+                            <span style="margin-right: 20px">
+                                <? if (isset($user->userName)): ?>
+                                    <?=$user->userName?>
+                                <? else: ?>
+                                    Личный кабинет
+                                <? endif ?>
+                            </span>
+                        </a>
+                        <a href="<?=CABINET_URL?>/logout">Выход</a>
+                    <? endif ?>
+                </div>
 
                 <div class="main-header-buttons">
 
@@ -67,36 +88,24 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         </a>
 						*/?>
                     </div>
+
+                    <a href="/#donate" class="main-header-button-donate">Помочь фонду</a>
                 </div>
 
-                <div class="main-header-separator"></div>
-
-                <? $user = getAppercodeUser(); ?>
-
-                <div class="main-header-button-login">
-                    <? if (is_null($user)): ?>
-                        <a href="<?=CABINET_URL?>/registration">Регистрация</a>
-                        <a href="<?=CABINET_URL?>/login">Вход</a>
-                    <? else: ?>
-                        <a href="<?=CABINET_URL?>">
-                            <span style="margin-right: 20px">
-                                <? if (isset($user->userName)): ?>
-                                    <?=$user->userName?>
-                                <? else: ?>
-                                    Личный кабинет
-                                <? endif ?>
-                            </span>
-                        </a>
-                        <a href="<?=CABINET_URL?>/logout">Выход</a>
-                    <? endif ?>
-                </div>
             </div>
         </div>
         <nav class="main-header-nav">
             <div class="wrapper">
                 <?$APPLICATION->IncludeComponent("bitrix:menu", "main-header-nav-list", Array("ROOT_MENU_TYPE" => "top"), false);?>
                 <div class="main-header-nav-right">
-                    <a href="/#donate" class="button button-red">Помочь прямо сейчас</a>
+                    <a href="/screen" class="main-header-nav-button">
+                        <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-button-screen.svg"); ?>
+                        Пройти тест
+                    </a>
+                    <a href="https://media.nenaprasno.ru/" target="_blank" class="main-header-nav-button">
+                        <?php echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/images/icon-button-media.svg"); ?>
+                        Профилактика-медиа
+                    </a>
                 </div>
             </div>
         </nav>
