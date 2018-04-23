@@ -61,13 +61,11 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         <a href="<?=CABINET_URL?>/registration">Регистрация</a>
                     <? else: ?>
                         <a href="<?=CABINET_URL?>">
-                            <span style="margin-right: 20px">
-                                <? if (isset($user->userName)): ?>
-                                    <?=$user->userName?>
-                                <? else: ?>
-                                    Личный кабинет
-                                <? endif ?>
-                            </span>
+                            <? if (isset($user->userName)): ?>
+                                <?=$user->userName?>
+                            <? else: ?>
+                                Личный кабинет
+                            <? endif ?>
                         </a>
                         <a href="<?=CABINET_URL?>/logout">Выход</a>
                     <? endif ?>
